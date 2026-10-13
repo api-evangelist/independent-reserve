@@ -1,23 +1,142 @@
 aid: independent-reserve
 name: Independent Reserve
-description: 'Independent Reserve is a company surfaced via the API Evangelist harvest backlog (source:
-  market-gap:crypto-exchanges) and added to the network as a stub for full-pipeline profiling.'
+description: Independent Reserve is an Australian cryptocurrency exchange (also serving New Zealand and Singapore) for personal, business, trust and institutional clients. It publishes a JSON-over-HTTPS trading API at https://api.independentreserve.com with Public (unauthenticated GET) and Private (HMAC-SHA256 signed POST) methods for market data, orders, accounts, deposits and withdrawals, a request-for-quote (RFQ) surface, and a WebSockets market-data feed.
 url: https://raw.githubusercontent.com/api-evangelist/independent-reserve/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:market-gap:crypto-exchanges
-x-tier: stub
-x-tier-reason: harvest
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-13 (local-v5; was harvest)
 specificationVersion: '0.20'
 created: '2026-10-13'
 modified: '2026-10-13'
 tags:
 - Company
-apis: []
+- Cryptocurrency
+- Exchange
+- Trading
+- Bitcoin
+- Financial Services
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Spectral
+  url: rules/independent-reserve-rules.yml
+- type: JSONLD
+  url: json-ld/independent-reserve-context.jsonld
+- type: Vocabulary
+  url: vocabulary/independent-reserve-vocabulary.yml
+- type: DataModel
+  url: data-model/independent-reserve-data-model.yml
+- type: Idempotency
+  url: conventions/independent-reserve-conventions.yml
+- type: Conventions
+  url: conventions/independent-reserve-conventions.yml
+- type: Authentication
+  url: authentication/independent-reserve-authentication.yml
+- type: Deprecation
+  url: lifecycle/independent-reserve-lifecycle.yml
+- type: Lifecycle
+  url: lifecycle/independent-reserve-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/independent-reserve-error-codes.yml
+- type: Conformance
+  url: conformance/independent-reserve-conformance.yml
+- type: Hosts
+  url: hosts/independent-reserve-hosts.yml
+- type: Vendors
+  url: vendors/independent-reserve-vendors.yml
+- type: VulnerabilityDisclosure
+  url: security/independent-reserve-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/independent-reserve-domain-security.yml
 - type: Website
   url: https://www.independentreserve.com
+- type: Documentation
+  url: https://www.independentreserve.com/features/api
+- type: APIReference
+  url: https://www.independentreserve.com/features/api
+- type: GettingStarted
+  url: https://www.independentreserve.com/help/getting-started
+- type: Blog
+  url: https://www.independentreserve.com/blog
+- type: Support
+  url: https://www.independentreserve.com/help
+- type: PrivacyPolicy
+  url: https://www.independentreserve.com/help/privacy-policy
+- type: TermsOfService
+  url: https://www.independentreserve.com/help/terms-and-conditions
+- type: Security
+  url: https://www.independentreserve.com/security
+- type: TrustCenter
+  url: https://www.independentreserve.com/features/trust
+- type: GitHubOrganization
+  url: https://github.com/independentreserve
+- type: Postman
+  url: postman/independent-reserve-api-postman-collection.json
+- type: Login
+  url: https://portal.independentreserve.com/
+apis:
+- aid: independent-reserve:independent-reserve-api
+  name: Independent Reserve API
+  description: JSON HTTP API with Public market-data methods (GET) and Private account, order, deposit and withdrawal methods (POST, signed with API key, nonce or expiry, and HMAC-SHA256 signature), plus request-for-quote endpoints.
+  humanURL: https://www.independentreserve.com/features/api
+  baseURL: https://api.independentreserve.com
+  tags:
+  - Cryptocurrency
+  - Trading
+  - Market Data
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/independent-reserve-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/independent-reserve-post-private-gettransactions-request-schema.json
+  - type: JSONSchema
+    url: json-schema/independent-reserve-post-private-getorderdetails-response-schema.json
+  - type: JSONSchema
+    url: json-schema/independent-reserve-post-private-getclosedfilledorders-request-schema.json
+  - type: JSONSchema
+    url: json-schema/independent-reserve-post-private-getclosedorders-request-schema.json
+  - type: JSONSchema
+    url: json-schema/independent-reserve-post-private-getopenorders-request-schema.json
+  - type: JSONSchema
+    url: json-schema/independent-reserve-get-public-getmarketsummary-response-schema.json
+  - type: Documentation
+    url: https://www.independentreserve.com/features/api
+  - type: Authentication
+    url: https://www.independentreserve.com/features/api#authentication-api-key
+  - type: PostmanCollection
+    url: postman/independent-reserve-api-postman-collection.json
+  - type: SourceCode
+    url: https://github.com/independentreserve/dotNetApiClient
+- aid: independent-reserve:independent-reserve-websockets
+  name: Independent Reserve WebSockets API
+  description: WebSockets feed for order book and ticker data, documented with samples in the independentreserve/websockets GitHub repository.
+  humanURL: https://github.com/independentreserve/websockets
+  tags:
+  - Cryptocurrency
+  - WebSockets
+  - Market Data
+  properties:
+  - type: Documentation
+    url: https://github.com/independentreserve/websockets
+x-coverage:
+  state: none
+  reason: no-developer-program
+  method: derived
+  generated: '2026-10-13'
+  generator: derive-coverage.py (pre-flight evidence)
+  detail: the company publishes no developer documentation host and no machine-readable contract on its own domain
+  evidence:
+  - url: https://portal.independentreserve.com/mcp
+    status: 403
+  - url: https://www.independentreserve.com
+    status: 200
+x-enrichment:
+  date: '2026-10-13'
+  status: enriched
+  artifacts_added: 27
+  pass: local-v5

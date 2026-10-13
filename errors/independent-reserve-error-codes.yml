@@ -1,0 +1,64 @@
+generated: '2026-10-13'
+method: searched
+source: https://www.independentreserve.com/features/api
+format: json
+envelope:
+  ErrorCode: string
+  Message: string
+note: 'The API uses HTTP 200/400; on error the body is {"ErrorCode": ..., "Message": ...}. Remediation text is the documented description where given.'
+problems:
+- status: 400
+  title: UnexpectedError
+  type: UnexpectedError
+  description: An error occurred internally to Independent Reserve.
+  remediation: Check account or order status and send a new request if required.
+- status: 400
+  title: ValidationError
+  type: ValidationError
+  description: One or more properties in the request were invalid.
+  remediation: Check Message property for more information.
+- status: 400
+  title: AccessDenied
+  type: AccessDenied
+  description: Credentials rejected.
+  remediation: Check that your credentials are correct.
+- status: 400
+  title: RequestDuplicated
+  type: RequestDuplicated
+  description: A prior request with the same ClientId has already been received.
+  remediation: Do not resend; look up the original by ClientId.
+- status: 400
+  title: RecordDoesNotExist
+  type: RecordDoesNotExist
+  description: The request was for a key that doesn't exist in our system.
+  remediation: Check the identifier.
+- status: 400
+  title: RecordNotWhitelisted
+  type: RecordNotWhitelisted
+  description: A crypto address or bank account is not whitelisted for the operation attempted.
+  remediation: Whitelist the address or bank account.
+- status: 400
+  title: UserSuspended
+  type: UserSuspended
+  description: Access to this account is temporarily suspended for security reasons.
+  remediation: Contact support.
+- status: 400
+  title: UserInactive
+  type: UserInactive
+  description: The account has been permanently closed.
+  remediation: None.
+- status: 400
+  title: UserFrozen
+  type: UserFrozen
+  description: Some functions on this account are limited.
+  remediation: Log in to your account for more information.
+- status: 400
+  title: OrderLimitExceeded
+  type: OrderLimitExceeded
+  description: The order attempted has exceeded internal limits.
+  remediation: The order size should be reduced.
+- status: 400
+  title: WithdrawalDisabled
+  type: WithdrawalDisabled
+  description: Withdrawals for the selected currency are temporarily unavailable.
+  remediation: Retry later.

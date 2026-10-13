@@ -1,0 +1,23 @@
+generated: '2026-10-13'
+method: none
+source:
+- https://www.independentreserve.com/features/api#sample-api-clients
+- https://www.nuget.org/packages/IndependentReserve.Client
+packages: []
+rejected:
+- name: IndependentReserve.Client
+  registry: nuget
+  reason: 'registry metadata names neither the provider''s domain nor its GitHub org: official downgraded (harvest-packages.py --audit)'
+- name: ir-api
+  registry: github
+  reason: 'official: false as written'
+- name: independentreserve (PHP)
+  registry: github
+  reason: 'official: false as written'
+- name: pyindependentreserve
+  registry: github
+  reason: 'official: false as written'
+- name: XChange
+  registry: github
+  reason: 'official: false as written'
+note: 'no first-party package: every candidate a model listed was unowned (harvest-packages.py --audit)'

@@ -1,0 +1,26 @@
+generated: '2026-10-13'
+method: searched
+source: https://www.independentreserve.com/features/api#authentication-api-key
+docs: https://www.independentreserve.com/features/api#authentication-api-key
+summary: 'Public methods need no authentication. Private methods are POSTs carrying apiKey, a nonce OR an expiry (one, not both), and a signature: a hex HMAC-SHA256 over a comma-separated string of the method URL and every parameter as parameterName=parameterValue, keyed with the API secret.'
+schemes:
+- name: IR API key + HMAC-SHA256 signature
+  type: apiKey
+  in: body
+  parameters:
+  - apiKey
+  - nonce
+  - expiry
+  - signature
+  signature:
+    algorithm: HMAC-SHA256
+    encoding: hex
+    message: method URL, then parameterName=parameterValue pairs, comma-separated, in documented order
+  key_management:
+  - Keys are generated under Settings > API Keys with a selectable access level
+  - IP whitelisting strongly recommended; non-whitelisted IPs are rejected
+  - Keys created without IP whitelisting are disabled after 6 months unused
+  applies_to: /Private/* and /rfq/*
+- name: none
+  type: none
+  applies_to: /Public/*

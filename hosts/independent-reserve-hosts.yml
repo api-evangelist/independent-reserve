@@ -1,0 +1,88 @@
+generated: '2026-10-13'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 5
+  own: 4
+  other_domain: 0
+  platform: 1
+  roles:
+  - api
+  - identity
+  - other
+  - source
+  - website
+hosts:
+- host: api.independentreserve.com
+  found_by:
+  - apis[]
+  - contract-discovery
+  types: []
+  serves:
+  - api
+  registrable_domain: independentreserve.com
+  role: api
+  relation: own
+- host: github.com
+  found_by:
+  - pointer
+  - apis[]
+  types:
+  - GitHubOrganization
+  serves:
+  - docs
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: jobs.independentreserve.com
+  found_by:
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types: []
+  serves: []
+  registrable_domain: independentreserve.com
+  role: other
+  relation: own
+- host: portal.independentreserve.com
+  found_by:
+  - pointer
+  - probed
+  - site-links
+  - contract-discovery
+  - well-known
+  types:
+  - Login
+  serves: []
+  registrable_domain: independentreserve.com
+  role: identity
+  relation: own
+- host: www.independentreserve.com
+  found_by:
+  - pointer
+  - apis[]
+  - probed
+  - docs-index
+  - contract-discovery
+  - well-known
+  - vendor-detect
+  types:
+  - Website
+  - Documentation
+  - APIReference
+  - GettingStarted
+  - Blog
+  - Support
+  - PrivacyPolicy
+  - TermsOfService
+  - Security
+  - TrustCenter
+  serves:
+  - docs
+  - cdn
+  vendor: cloudflare
+  registrable_domain: independentreserve.com
+  role: website
+  relation: own

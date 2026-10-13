@@ -1,0 +1,1459 @@
+{
+	"info": {
+		"_postman_id": "16774985-2c33-44c1-a48b-d23ee8b1f343",
+		"name": "Independent Reserve API",
+		"description": "# Authentication and Private Methods\n\nIn order to access private endpoints, set the `ir-api-key` and `ir-api-secret` environment or collection variables.\n\nSee the `Pre-request Script` in the `Private` folder to see how requests are signed before being sent to the server.\n\nThis can be adopted in your own project and migrated to any other programming language.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8540566"
+	},
+	"item": [
+		{
+			"name": "Public",
+			"item": [
+				{
+					"name": "GetValidPrimaryCurrencyCodes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ir-api-url}}/Public/GetValidPrimaryCurrencyCodes",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Public",
+								"GetValidPrimaryCurrencyCodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetValidSecondaryCurrencyCodes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ir-api-url}}/Public/GetValidSecondaryCurrencyCodes",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Public",
+								"GetValidSecondaryCurrencyCodes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetValidLimitOrderTypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ir-api-url}}/Public/GetValidLimitOrderTypes",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Public",
+								"GetValidLimitOrderTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetValidMarketOrderTypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ir-api-url}}/Public/GetValidMarketOrderTypes",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Public",
+								"GetValidMarketOrderTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetValidOrderTypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ir-api-url}}/Public/GetValidOrderTypes",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Public",
+								"GetValidOrderTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetValidTransactionTypes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ir-api-url}}/Public/GetValidTransactionTypes",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Public",
+								"GetValidTransactionTypes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPrimaryCurrencyConfig",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ir-api-url}}/Public/GetPrimaryCurrencyConfig",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Public",
+								"GetPrimaryCurrencyConfig"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetMarketSummary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ir-api-url}}/Public/GetMarketSummary?primaryCurrencyCode=Xbt&secondaryCurrencyCode=Aud",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Public",
+								"GetMarketSummary"
+							],
+							"query": [
+								{
+									"key": "primaryCurrencyCode",
+									"value": "Xbt"
+								},
+								{
+									"key": "secondaryCurrencyCode",
+									"value": "Aud"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOrderBook",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ir-api-url}}/Public/GetOrderBook?primaryCurrencyCode=Xbt&secondaryCurrencyCode=Aud&maxDepthVolume=&maxDepthValue",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Public",
+								"GetOrderBook"
+							],
+							"query": [
+								{
+									"key": "primaryCurrencyCode",
+									"value": "Xbt"
+								},
+								{
+									"key": "secondaryCurrencyCode",
+									"value": "Aud"
+								},
+								{
+									"key": "maxDepthVolume",
+									"value": ""
+								},
+								{
+									"key": "maxDepthValue",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllOrders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ir-api-url}}/Public/GetAllOrders?primaryCurrencyCode=Xbt&secondaryCurrencyCode=Aud&maxDepthVolume=&maxDepthValue",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Public",
+								"GetAllOrders"
+							],
+							"query": [
+								{
+									"key": "primaryCurrencyCode",
+									"value": "Xbt"
+								},
+								{
+									"key": "secondaryCurrencyCode",
+									"value": "Aud"
+								},
+								{
+									"key": "maxDepthVolume",
+									"value": ""
+								},
+								{
+									"key": "maxDepthValue",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTradeHistorySummary",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ir-api-url}}/Public/GetTradeHistorySummary?primaryCurrencyCode=Xbt&secondaryCurrencyCode=Aud&numberOfHoursInThePastToRetrieve=24",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Public",
+								"GetTradeHistorySummary"
+							],
+							"query": [
+								{
+									"key": "primaryCurrencyCode",
+									"value": "Xbt"
+								},
+								{
+									"key": "secondaryCurrencyCode",
+									"value": "Aud"
+								},
+								{
+									"key": "numberOfHoursInThePastToRetrieve",
+									"value": "24"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRecentTrades",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ir-api-url}}/Public/GetRecentTrades?primaryCurrencyCode=Xbt&secondaryCurrencyCode=Aud&numberOfRecentTradesToRetrieve=10",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Public",
+								"GetRecentTrades"
+							],
+							"query": [
+								{
+									"key": "primaryCurrencyCode",
+									"value": "Xbt"
+								},
+								{
+									"key": "secondaryCurrencyCode",
+									"value": "Aud"
+								},
+								{
+									"key": "numberOfRecentTradesToRetrieve",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFxRates",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ir-api-url}}/Public/GetFxRates",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Public",
+								"GetFxRates"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOrderMinimumVolumes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ir-api-url}}/Public/GetOrderMinimumVolumes",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Public",
+								"GetOrderMinimumVolumes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetDepositFees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ir-api-url}}/Public/GetDepositFees",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Public",
+								"GetDepositFees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFiatWithdrawalFees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ir-api-url}}/Public/GetFiatWithdrawalFees",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Public",
+								"GetFiatWithdrawalFees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetCryptoWithdrawalFees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{ir-api-url}}/Public/GetCryptoWithdrawalFees",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Public",
+								"GetCryptoWithdrawalFees"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Public methods are accessed via HTTP GET and do not require an authentication token to be passed."
+		},
+		{
+			"name": "Private",
+			"item": [
+				{
+					"name": "GetOpenOrders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"primaryCurrencyCode\": \"Xbt\",\r\n    \"secondaryCurrencyCode\": \"Aud\",\r\n    \"pageIndex\": 1,\r\n    \"pageSize\": 25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/GetOpenOrders",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"GetOpenOrders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetClosedOrders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"primaryCurrencyCode\": \"Xbt\",\r\n  \"secondaryCurrencyCode\": \"Aud\",\r\n  \"pageIndex\": 1,\r\n  \"pageSize\": 25,\r\n  \"fromTimestampUtc\": \"2022-08-01T08:00:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/GetClosedOrders",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"GetClosedOrders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetClosedFilledOrders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"primaryCurrencyCode\": \"Xbt\",\r\n  \"secondaryCurrencyCode\": \"Aud\",\r\n  \"pageIndex\": 1,\r\n  \"pageSize\": 25\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/GetClosedFilledOrders",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"GetClosedFilledOrders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetOrderDetails",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderGuid\": \"803f121f-dec0-4841-b14b-a122e64dae03\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/GetOrderDetails",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"GetOrderDetails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAccounts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/GetAccounts",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"GetAccounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTransactions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountGuid\": \"7cfa8f00-3c1d-44bb-a71f-2fe9fe4cb6dd\",\r\n    \"fromTimestampUtc\": \"2022-08-01T09:00:00Z\",\r\n    \"toTimestampUtc\": null,\r\n    \"txTypes\": [\r\n        \"Brokerage\",\r\n        \"Trade\"\r\n    ],\r\n    \"pageIndex\": 1,\r\n    \"pageSize\": 10,\r\n    \"includeTotals\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/GetTransactions",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"GetTransactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFiatBankAccounts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/GetFiatBankAccounts",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"GetFiatBankAccounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetDigitalCurrencyDepositAddress",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"primaryCurrencyCode\": \"Xbt\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/GetDigitalCurrencyDepositAddress",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"GetDigitalCurrencyDepositAddress"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetDigitalCurrencyDepositAddresses",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"primaryCurrencyCode\": \"Xbt\",\r\n    \"pageIndex\": 1,\r\n    \"pageSize\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/GetDigitalCurrencyDepositAddresses",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"GetDigitalCurrencyDepositAddresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTrades",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pageIndex\": 1,\r\n    \"pageSize\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/GetTrades",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"GetTrades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetTradesByOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderGuid\": \"cc1e7074-b783-48ac-be0a-fdadf01c19c3\",\r\n    \"clientId\": \"a96ff431-7f47-4ab5-9974-4a2c6b6eb8d8\",\r\n    \"pageIndex\": 1,\r\n    \"pageSize\": 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/GetTradesByOrder",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"GetTradesByOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetBrokerageFees",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/GetBrokerageFees",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"GetBrokerageFees"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetDigitalCurrencyWithdrawal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"transactionGuid\": \"2a93732f-3f40-4685-b3bc-ff3ec326090d\",\r\n    \"clientId\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/GetDigitalCurrencyWithdrawal",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"GetDigitalCurrencyWithdrawal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetFiatWithdrawal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fiatWithdrawalRequestGuid\": \"2e9ad56c-1954-4b0f-b3d8-2ade7fad93ff\",\r\n    \"clientId\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/GetFiatWithdrawal",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"GetFiatWithdrawal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetDepositLimits",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/GetDepositLimits",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"GetDepositLimits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetWithdrawalLimits",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/GetWithdrawalLimits",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"GetWithdrawalLimits"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPositions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fromTimestampUtc\": \"2022-08-01T09:00:00Z\",\r\n  \"toTimestampUtc\": \"2025-08-01T09:00:00Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/GetPositions",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"GetPositions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetPositionEvents",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"positionGuid\": \"7c0af935-b5e9-49fb-b2d8-815938911cad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/GetPositionEvents",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"GetPositionEvents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PlaceLimitOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientId\": \"{client-id}\",\r\n    \"primaryCurrencyCode\": \"Xbt\",\r\n    \"secondaryCurrencyCode\": \"Aud\",\r\n    \"orderType\": \"LimitBid\",\r\n    \"price\": 485.76,\r\n    \"volume\": 0.358,\r\n    \"timeInForce\": \"Gtc\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/PlaceLimitOrder",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"PlaceLimitOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PlaceMarketOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientId\": \"{client-id}\",\r\n    \"primaryCurrencyCode\": \"Xbt\",\r\n    \"secondaryCurrencyCode\": \"Aud\",\r\n    \"orderType\": \"MarketOffer\",\r\n    \"volume\": 0.001\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/PlaceMarketOrder",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"PlaceMarketOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CancelOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderGuid\": \"719c495c-a39e-4884-93ac-280b37245037\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/CancelOrder",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"CancelOrder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CancelOrders",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"orderGuids\": [\r\n        \"5053e267-6060-44a8-9ab6-77f36fed86df\",\r\n        \"309d8b71-868c-4408-9346-c5aca4c3efdb\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/CancelOrders",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"CancelOrders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SynchDigitalCurrencyDepositAddressWithBlockchain",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"depositAddress\": \"12a7FbBzSGvJd36wNesAxAksLXMWm4oLUJ\",\r\n    \"primaryCurrencyCode\": \"Bch\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/SynchDigitalCurrencyDepositAddressWithBlockchain",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"SynchDigitalCurrencyDepositAddressWithBlockchain"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "WithdrawFiatCurrency",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"secondaryCurrencyCode\": \"{secondaryCurrencyCode}\",\r\n    \"withdrawalAmount\": \"{withdrawalAmount}\",\r\n    \"fiatBankAccountGuid\": \"{fiatBankAccountGuid}\",\r\n    \"useNpp\": \"true\",\r\n    \"comment\": \"{comment}\",\r\n    \"clientId\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/WithdrawFiatCurrency",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"WithdrawFiatCurrency"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "WithdrawDigitalCurrency",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\": 0.123,\r\n    \"withdrawalAddress\": \"{destinationAddress}\",\r\n    \"comment\": \"\",\r\n    \"primaryCurrencyCode\": \"Bch\",\r\n    \"destinationTag\": null,\r\n    \"clientId\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/Private/WithdrawDigitalCurrency",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"Private",
+								"WithdrawDigitalCurrency"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Private methods are accessed via HTTP POST and require a valid authentication token to be passed. Parameters for all private methods, including the three parameters to authenticate the call, must be posted as a JSON object.\n\nSee Pre-request Script to better understand how the authentication works.",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"const cryptoJs = require('crypto-js');",
+							"",
+							"",
+							"const getVariable = (name) => {",
+							"",
+							"    // we try to get variable value from a few places",
+							"    // local variables, env variables, collection variables , global variables ",
+							"    const value = pm.variables.get(name);",
+							"",
+							"    if (!value) {",
+							"        throw new Error(`Set ${name} collection or environment variable`)",
+							"    }",
+							"",
+							"    return value;",
+							"}",
+							"",
+							"const getConfig = () => {",
+							"",
+							"    const baseUrl = getVariable('ir-api-url');",
+							"    const apiKey = getVariable('ir-api-key');",
+							"    const apiSecret = getVariable('ir-api-secret');",
+							"",
+							"    return { baseUrl, apiKey, apiSecret };",
+							"}",
+							"",
+							"const getInitialPayload = () => {",
+							"    let requestBody = pm.request.body;",
+							"    if (requestBody.mode !== 'raw') {",
+							"        throw new Error('raw request type expected')",
+							"    }",
+							"",
+							"    return JSON.parse(requestBody.raw);",
+							"}",
+							"",
+							"const getNonce = () => Date.now();",
+							"",
+							"const getSignatureInput = (payload, endpointUrl) => {",
+							"",
+							"    const parameters = [endpointUrl];",
+							"",
+							"    for (const key in payload) {",
+							"        const valueByKey = payload[key];",
+							"        parameters.push(valueByKey === null ? `${key}=` : Array.isArray(valueByKey) ? `${key}=${valueByKey.join(',')}` : `${key}=${valueByKey}`);",
+							"    }",
+							"",
+							"    const message = parameters.join(',');",
+							"",
+							"    return message;",
+							"}",
+							"",
+							"const getSignature = (signatureInput, apiSecret) => {",
+							"    const signer = cryptoJs.HmacSHA256(signatureInput, apiSecret);",
+							"    return signer.toString(cryptoJs.enc.Hex).toUpperCase();",
+							"}",
+							"",
+							"const { baseUrl, apiKey, apiSecret } = getConfig();",
+							"",
+							"const payload = getInitialPayload();",
+							"payload.apiKey = apiKey;",
+							"",
+							"// expiry can be provided manually, no need to add nonce in this case",
+							"if (!payload.hasOwnProperty('expiry')) {",
+							"    payload.nonce = getNonce();",
+							"}",
+							"",
+							"const endpointUrl = baseUrl + pm.variables.replaceIn(pm.request.url.getPathWithQuery());",
+							"",
+							"const signatureInput = getSignatureInput(payload, endpointUrl);",
+							"",
+							"// console.log(signatureInput)",
+							"",
+							"payload.signature = getSignature(signatureInput, apiSecret);",
+							"",
+							"pm.request.headers.add({key: \"Content-Type\", value: \"application/json\"});",
+							"const new_body = JSON.stringify(payload)",
+							"// console.log(new_body)",
+							"pm.request.body.update(new_body, 'application/json');",
+							"",
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Request for quote",
+			"item": [
+				{
+					"name": "RequestQuote",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"primaryCurrencyCode\": \"Xbt\",\n    \"secondaryCurrencyCode\": \"Aud\",\n    \"orderType\": \"Buy\",\n    \"volume\": \"0.1\",\n    \"volumeCurrencyType\": \"Primary\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/rfq/quote",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"rfq",
+								"quote"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ExecuteQuote",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quoteGuid\": \"ea52df75-47bf-4bd5-955d-28f1e739d34e\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/rfq/quote/execute",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"rfq",
+								"quote",
+								"execute"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetExecutedDeals",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"primaryCurrencyCode\": \"Xbt\",\n    \"secondaryCurrencyCode\": \"Aud\",\n    \"toTimestamp\": \"2026-08-01T09:00:00Z\",\n    \"maxResultCount\": 50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/rfq/deal/executed",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"rfq",
+								"deal",
+								"executed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetDealDetails",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"dealGuid\": \"e2e8bb12-a899-4d33-8824-4417e85fe236\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/rfq/deal/details",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"rfq",
+								"deal",
+								"details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetDealTransactions",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"rfqDealGuids\": [\n        \"5053e267-6060-44a8-9ab6-77f36fed86df\",\n        \"309d8b71-868c-4408-9346-c5aca4c3efdb\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ir-api-url}}/rfq/deal/transactions",
+							"host": [
+								"{{ir-api-url}}"
+							],
+							"path": [
+								"rfq",
+								"deal",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							"const cryptoJs = require('crypto-js');\r",
+							"\r",
+							"\r",
+							"const getVariable = (name) => {\r",
+							"\r",
+							"    // we try to get variable value from a few places\r",
+							"    // local variables, env variables, collection variables , global variables \r",
+							"    const value = pm.variables.get(name);\r",
+							"\r",
+							"    if (!value) {\r",
+							"        throw new Error(`Set ${name} collection or environment variable`)\r",
+							"    }\r",
+							"\r",
+							"    return value;\r",
+							"}\r",
+							"\r",
+							"const getConfig = () => {\r",
+							"\r",
+							"    const baseUrl = getVariable('ir-api-url');\r",
+							"    const apiKey = getVariable('ir-api-key');\r",
+							"    const apiSecret = getVariable('ir-api-secret');\r",
+							"\r",
+							"    return { baseUrl, apiKey, apiSecret };\r",
+							"}\r",
+							"\r",
+							"const getInitialPayload = () => {\r",
+							"    let requestBody = pm.request.body;\r",
+							"    if (requestBody.mode !== 'raw') {\r",
+							"        throw new Error('raw request type expected')\r",
+							"    }\r",
+							"\r",
+							"    return JSON.parse(requestBody.raw);\r",
+							"}\r",
+							"\r",
+							"const getNonce = () => Date.now();\r",
+							"\r",
+							"const getSignatureInput = (payload, endpointUrl) => {\r",
+							"\r",
+							"    const parameters = [endpointUrl];\r",
+							"\r",
+							"    for (const key in payload) {\r",
+							"        const valueByKey = payload[key];\r",
+							"        parameters.push(valueByKey === null ? `${key}=` : Array.isArray(valueByKey) ? `${key}=${valueByKey.join(',')}` : `${key}=${valueByKey}`);\r",
+							"    }\r",
+							"\r",
+							"    const message = parameters.join(',');\r",
+							"\r",
+							"    return message;\r",
+							"}\r",
+							"\r",
+							"const getSignature = (signatureInput, apiSecret) => {\r",
+							"    const signer = cryptoJs.HmacSHA256(signatureInput, apiSecret);\r",
+							"    return signer.toString(cryptoJs.enc.Hex).toUpperCase();\r",
+							"}\r",
+							"\r",
+							"const { baseUrl, apiKey, apiSecret } = getConfig();\r",
+							"\r",
+							"const payload = getInitialPayload();\r",
+							"payload.apiKey = apiKey;\r",
+							"\r",
+							"// expiry can be provided manually, no need to add nonce in this case\r",
+							"if (!payload.hasOwnProperty('expiry')) {\r",
+							"    payload.nonce = getNonce();\r",
+							"}\r",
+							"\r",
+							"const endpointUrl = baseUrl + pm.variables.replaceIn(pm.request.url.getPathWithQuery());\r",
+							"\r",
+							"const signatureInput = getSignatureInput(payload, endpointUrl);\r",
+							"\r",
+							"// console.log(signatureInput)\r",
+							"\r",
+							"payload.signature = getSignature(signatureInput, apiSecret);\r",
+							"\r",
+							"pm.request.headers.add({key: \"Content-Type\", value: \"application/json\"});\r",
+							"const new_body = JSON.stringify(payload)\r",
+							"// console.log(new_body)\r",
+							"pm.request.body.update(new_body, 'application/json');\r",
+							"\r",
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ir-api-url",
+			"value": "https://api.independentreserve.com",
+			"type": "string"
+		},
+		{
+			"key": "ir-api-key",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "ir-api-secret",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

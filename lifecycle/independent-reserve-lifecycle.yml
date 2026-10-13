@@ -1,0 +1,26 @@
+generated: '2026-10-13'
+method: searched
+source: https://www.independentreserve.com/features/api#api-changes
+versioning:
+  style: method-name suffix
+  description: Replacement methods carry a numeric suffix (GetPrimaryCurrencyConfig2, GetCryptoWithdrawalFees2, GetDigitalCurrencyDepositAddress2); no URL or header versioning.
+deprecation:
+  policy: Endpoints that were replaced remain operational (January 2025 network/bridging change).
+  headers: none documented
+status_page: null
+deprecated_operations:
+- operation: GetPrimaryCurrencyConfig
+  replaced_by: GetPrimaryCurrencyConfig2
+  date: 2025-01
+- operation: GetCryptoWithdrawalFees
+  replaced_by: GetCryptoWithdrawalFees2
+  date: 2025-01
+- operation: GetDigitalCurrencyDepositAddress
+  replaced_by: GetDigitalCurrencyDepositAddress2
+  date: 2025-01
+- operation: GetDigitalCurrencyDepositAddresses
+  replaced_by: GetDigitalCurrencyDepositAddresses2
+  date: 2025-01
+- operation: WithdrawDigitalCurrency
+  replaced_by: WithdrawCrypto
+  date: 2025-01

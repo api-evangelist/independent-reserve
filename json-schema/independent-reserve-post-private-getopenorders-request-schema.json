@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/independent-reserve/main/json-schema/independent-reserve-post-private-getopenorders-request-schema.json",
+  "title": "PostPrivateGetopenordersRequest",
+  "x-generated": "2026-10-13",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetopenordersRequest",
+  "type": "object",
+  "properties": {
+    "apiKey": {
+      "type": "string",
+      "description": "Your API Key"
+    },
+    "nonce": {
+      "type": "string",
+      "description": "Nonce value"
+    },
+    "signature": {
+      "type": "string",
+      "description": "HMAC-SHA256 encoded message to authenticate API call"
+    },
+    "primaryCurrencyCode": {
+      "type": "string",
+      "description": "The primary currency of orders"
+    },
+    "secondaryCurrencyCode": {
+      "type": "string",
+      "description": "The secondary currency of orders"
+    },
+    "pageIndex": {
+      "type": "integer",
+      "description": "Must be larger than 0"
+    },
+    "pageSize": {
+      "type": "integer",
+      "description": "Must be between 1 and 100"
+    }
+  },
+  "required": [
+    "apiKey",
+    "nonce",
+    "signature",
+    "pageIndex",
+    "pageSize"
+  ]
+}

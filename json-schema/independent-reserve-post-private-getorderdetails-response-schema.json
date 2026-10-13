@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/independent-reserve/main/json-schema/independent-reserve-post-private-getorderdetails-response-schema.json",
+  "title": "PostPrivateGetorderdetailsResponse",
+  "x-generated": "2026-10-13",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetorderdetailsResponse",
+  "type": "object",
+  "properties": {
+    "OrderGuid": {
+      "type": "string",
+      "description": "Unique identifier of the order"
+    },
+    "CreatedTimestampUtc": {
+      "type": "string",
+      "description": "UTC timestamp of when order was created"
+    },
+    "Type": {
+      "type": "string",
+      "description": "Type of order"
+    },
+    "VolumeOrdered": {
+      "type": "number",
+      "description": "The original volume ordered"
+    },
+    "VolumeFilled": {
+      "type": "number",
+      "description": "Volume already filled on this order"
+    },
+    "Price": {
+      "type": "number",
+      "description": "Order limit price in secondary currency"
+    },
+    "AvgPrice": {
+      "type": "number",
+      "description": "Average price for all trades executed for the order"
+    },
+    "ReservedAmount": {
+      "type": "number",
+      "description": "The amount of funds reserved in your account by this order"
+    },
+    "Status": {
+      "type": "string",
+      "description": "Order status"
+    },
+    "PrimaryCurrencyCode": {
+      "type": "string",
+      "description": "Primary currency of order"
+    },
+    "SecondaryCurrencyCode": {
+      "type": "string",
+      "description": "Secondary currency of order"
+    },
+    "ClientId": {
+      "type": "string",
+      "description": "Client ID supplied when placing the order"
+    }
+  }
+}

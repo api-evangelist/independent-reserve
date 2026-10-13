@@ -1,0 +1,383 @@
+{
+  "@context": {
+    "@vocab": "https://independentreserve.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "independent": "https://independentreserve.com/schema#",
+    "PostPrivateCancelorderRequest": "independent:PostPrivateCancelorderRequest",
+    "apiKey": {
+      "@id": "independent:apiKey",
+      "@type": "xsd:string"
+    },
+    "nonce": {
+      "@id": "independent:nonce",
+      "@type": "xsd:string"
+    },
+    "signature": {
+      "@id": "independent:signature",
+      "@type": "xsd:string"
+    },
+    "PostPrivateCancelordersRequest": "independent:PostPrivateCancelordersRequest",
+    "PostPrivateGetaccountsRequest": "independent:PostPrivateGetaccountsRequest",
+    "PostPrivateGetaccountsResponse": "independent:PostPrivateGetaccountsResponse",
+    "AccountGuid": {
+      "@id": "independent:AccountGuid",
+      "@type": "xsd:string"
+    },
+    "AccountStatus": {
+      "@id": "independent:AccountStatus",
+      "@type": "xsd:string"
+    },
+    "AvailableBalance": {
+      "@id": "independent:AvailableBalance",
+      "@type": "xsd:decimal"
+    },
+    "CurrencyCode": {
+      "@id": "independent:CurrencyCode",
+      "@type": "xsd:string"
+    },
+    "TotalBalance": {
+      "@id": "independent:TotalBalance",
+      "@type": "xsd:decimal"
+    },
+    "PostPrivateGetbrokeragefeesRequest": "independent:PostPrivateGetbrokeragefeesRequest",
+    "PostPrivateGetbrokeragefeesResponse": "independent:PostPrivateGetbrokeragefeesResponse",
+    "FeePercent": {
+      "@id": "independent:FeePercent",
+      "@type": "xsd:decimal"
+    },
+    "PostPrivateGetclosedfilledordersRequest": "independent:PostPrivateGetclosedfilledordersRequest",
+    "primaryCurrencyCode": {
+      "@id": "independent:primaryCurrencyCode",
+      "@type": "xsd:string"
+    },
+    "secondaryCurrencyCode": {
+      "@id": "independent:secondaryCurrencyCode",
+      "@type": "xsd:string"
+    },
+    "pageIndex": {
+      "@id": "independent:pageIndex",
+      "@type": "xsd:integer"
+    },
+    "pageSize": {
+      "@id": "independent:pageSize",
+      "@type": "xsd:integer"
+    },
+    "fromTimestampUtc": {
+      "@id": "independent:fromTimestampUtc",
+      "@type": "xsd:string"
+    },
+    "includeTotals": {
+      "@id": "independent:includeTotals",
+      "@type": "xsd:boolean"
+    },
+    "PostPrivateGetclosedfilledordersResponse": "independent:PostPrivateGetclosedfilledordersResponse",
+    "PageSize": {
+      "@id": "independent:PageSize",
+      "@type": "xsd:integer"
+    },
+    "TotalItems": {
+      "@id": "independent:TotalItems",
+      "@type": "xsd:integer"
+    },
+    "TotalPages": {
+      "@id": "independent:TotalPages",
+      "@type": "xsd:integer"
+    },
+    "Data": {
+      "@id": "independent:Data",
+      "@container": "@list"
+    },
+    "PostPrivateGetclosedordersRequest": "independent:PostPrivateGetclosedordersRequest",
+    "PostPrivateGetclosedordersResponse": "independent:PostPrivateGetclosedordersResponse",
+    "PostPrivateGetdepositlimitsRequest": "independent:PostPrivateGetdepositlimitsRequest",
+    "PostPrivateGetdepositlimitsResponse": "independent:PostPrivateGetdepositlimitsResponse",
+    "DailyLimit": {
+      "@id": "independent:DailyLimit",
+      "@type": "xsd:decimal"
+    },
+    "MonthlyLimit": {
+      "@id": "independent:MonthlyLimit",
+      "@type": "xsd:decimal"
+    },
+    "PostPrivateGetfiatbankaccountsRequest": "independent:PostPrivateGetfiatbankaccountsRequest",
+    "PostPrivateGetfiatbankaccountsResponse": "independent:PostPrivateGetfiatbankaccountsResponse",
+    "PayId": {
+      "@id": "independent:PayId"
+    },
+    "Guid": {
+      "@id": "independent:Guid",
+      "@type": "xsd:string"
+    },
+    "Name": {
+      "@id": "independent:Name",
+      "@type": "xsd:string"
+    },
+    "Bsb": {
+      "@id": "independent:Bsb",
+      "@type": "xsd:string"
+    },
+    "Country": {
+      "@id": "independent:Country",
+      "@type": "xsd:string"
+    },
+    "Currency": {
+      "@id": "independent:Currency",
+      "@type": "xsd:string"
+    },
+    "AccountNumber": {
+      "@id": "independent:AccountNumber",
+      "@type": "xsd:string"
+    },
+    "AccountHolderName": {
+      "@id": "independent:AccountHolderName",
+      "@type": "xsd:string"
+    },
+    "PostPrivateGetopenordersRequest": "independent:PostPrivateGetopenordersRequest",
+    "PostPrivateGetopenordersResponse": "independent:PostPrivateGetopenordersResponse",
+    "PostPrivateGetorderdetailsRequest": "independent:PostPrivateGetorderdetailsRequest",
+    "orderGuid": {
+      "@id": "independent:orderGuid",
+      "@type": "xsd:string"
+    },
+    "clientId": {
+      "@id": "independent:clientId",
+      "@type": "xsd:string"
+    },
+    "PostPrivateGetorderdetailsResponse": "independent:PostPrivateGetorderdetailsResponse",
+    "OrderGuid": {
+      "@id": "independent:OrderGuid",
+      "@type": "xsd:string"
+    },
+    "CreatedTimestampUtc": {
+      "@id": "independent:CreatedTimestampUtc",
+      "@type": "xsd:string"
+    },
+    "Type": {
+      "@id": "independent:Type",
+      "@type": "xsd:string"
+    },
+    "VolumeOrdered": {
+      "@id": "independent:VolumeOrdered",
+      "@type": "xsd:decimal"
+    },
+    "VolumeFilled": {
+      "@id": "independent:VolumeFilled",
+      "@type": "xsd:decimal"
+    },
+    "Price": {
+      "@id": "independent:Price",
+      "@type": "xsd:decimal"
+    },
+    "AvgPrice": {
+      "@id": "independent:AvgPrice",
+      "@type": "xsd:decimal"
+    },
+    "ReservedAmount": {
+      "@id": "independent:ReservedAmount",
+      "@type": "xsd:decimal"
+    },
+    "Status": {
+      "@id": "independent:Status",
+      "@type": "xsd:string"
+    },
+    "PrimaryCurrencyCode": {
+      "@id": "independent:PrimaryCurrencyCode",
+      "@type": "xsd:string"
+    },
+    "SecondaryCurrencyCode": {
+      "@id": "independent:SecondaryCurrencyCode",
+      "@type": "xsd:string"
+    },
+    "ClientId": {
+      "@id": "independent:ClientId",
+      "@type": "xsd:string"
+    },
+    "PostPrivateGettradesRequest": "independent:PostPrivateGettradesRequest",
+    "PostPrivateGettradesResponse": "independent:PostPrivateGettradesResponse",
+    "TradeGuid": {
+      "@id": "independent:TradeGuid",
+      "@type": "xsd:string"
+    },
+    "PostPrivateGettransactionsRequest": "independent:PostPrivateGettransactionsRequest",
+    "accountGuid": {
+      "@id": "independent:accountGuid",
+      "@type": "xsd:string"
+    },
+    "toTimestampUtc": {
+      "@id": "independent:toTimestampUtc",
+      "@type": "xsd:string"
+    },
+    "txTypes": {
+      "@id": "independent:txTypes",
+      "@container": "@list"
+    },
+    "PostPrivateGettransactionsResponse": "independent:PostPrivateGettransactionsResponse",
+    "PostPrivateGetwithdrawallimitsRequest": "independent:PostPrivateGetwithdrawallimitsRequest",
+    "PostPrivateGetwithdrawallimitsResponse": "independent:PostPrivateGetwithdrawallimitsResponse",
+    "PostPrivatePlacelimitorderRequest": "independent:PostPrivatePlacelimitorderRequest",
+    "PostPrivatePlacelimitorderResponse": "independent:PostPrivatePlacelimitorderResponse",
+    "PostPrivatePlacemarketorderRequest": "independent:PostPrivatePlacemarketorderRequest",
+    "PostPrivatePlacemarketorderResponse": "independent:PostPrivatePlacemarketorderResponse",
+    "PostPrivateSynchdigitalcurrencydepositaddresswithblockchainR": "independent:PostPrivateSynchdigitalcurrencydepositaddresswithblockchainR",
+    "PostPrivateWithdrawcryptoRequest": "independent:PostPrivateWithdrawcryptoRequest",
+    "PostPrivateWithdrawfiatcurrencyRequest": "independent:PostPrivateWithdrawfiatcurrencyRequest",
+    "GetPublicGetallordersResponse": "independent:GetPublicGetallordersResponse",
+    "BuyOrders": {
+      "@id": "independent:BuyOrders",
+      "@container": "@list"
+    },
+    "SellOrders": {
+      "@id": "independent:SellOrders",
+      "@container": "@list"
+    },
+    "GetPublicGetcryptowithdrawalfees2Response": "independent:GetPublicGetcryptowithdrawalfees2Response",
+    "Fee": {
+      "@id": "independent:Fee",
+      "@type": "xsd:decimal"
+    },
+    "Network": {
+      "@id": "independent:Network",
+      "@type": "xsd:string"
+    },
+    "GetPublicGetdepositfeesResponse": "independent:GetPublicGetdepositfeesResponse",
+    "DepositType": {
+      "@id": "independent:DepositType",
+      "@type": "xsd:string"
+    },
+    "FreeThreshold": {
+      "@id": "independent:FreeThreshold",
+      "@type": "xsd:decimal"
+    },
+    "GetPublicGetfiatwithdrawalfeesResponse": "independent:GetPublicGetfiatwithdrawalfeesResponse",
+    "WithdrawalType": {
+      "@id": "independent:WithdrawalType",
+      "@type": "xsd:string"
+    },
+    "MinimumAmount": {
+      "@id": "independent:MinimumAmount",
+      "@type": "xsd:decimal"
+    },
+    "GetPublicGetfxratesResponse": "independent:GetPublicGetfxratesResponse",
+    "CurrencyCodeA": {
+      "@id": "independent:CurrencyCodeA",
+      "@type": "xsd:string"
+    },
+    "CurrencyCodeB": {
+      "@id": "independent:CurrencyCodeB",
+      "@type": "xsd:string"
+    },
+    "Rate": {
+      "@id": "independent:Rate",
+      "@type": "xsd:decimal"
+    },
+    "GetPublicGetmarketsummaryResponse": "independent:GetPublicGetmarketsummaryResponse",
+    "DayHighestPrice": {
+      "@id": "independent:DayHighestPrice",
+      "@type": "xsd:decimal"
+    },
+    "DayLowestPrice": {
+      "@id": "independent:DayLowestPrice",
+      "@type": "xsd:decimal"
+    },
+    "DayAvgPrice": {
+      "@id": "independent:DayAvgPrice",
+      "@type": "xsd:decimal"
+    },
+    "DayVolumeXbt": {
+      "@id": "independent:DayVolumeXbt",
+      "@type": "xsd:decimal"
+    },
+    "DayVolumeXbtInSecondaryCurrrency": {
+      "@id": "independent:DayVolumeXbtInSecondaryCurrrency",
+      "@type": "xsd:decimal"
+    },
+    "CurrentLowestOfferPrice": {
+      "@id": "independent:CurrentLowestOfferPrice",
+      "@type": "xsd:decimal"
+    },
+    "CurrentHighestBidPrice": {
+      "@id": "independent:CurrentHighestBidPrice",
+      "@type": "xsd:decimal"
+    },
+    "LastPrice": {
+      "@id": "independent:LastPrice",
+      "@type": "xsd:decimal"
+    },
+    "GetPublicGetnetworksResponse": "independent:GetPublicGetnetworksResponse",
+    "networks": {
+      "@id": "independent:networks",
+      "@container": "@list"
+    },
+    "GetPublicGetorderbookResponse": "independent:GetPublicGetorderbookResponse",
+    "GetPublicGetorderminimumvolumesResponse": "independent:GetPublicGetorderminimumvolumesResponse",
+    "currency": {
+      "@id": "independent:currency",
+      "@type": "xsd:string"
+    },
+    "GetPublicGetprimarycurrencyconfig2Response": "independent:GetPublicGetprimarycurrencyconfig2Response",
+    "IsTradeEnabled": {
+      "@id": "independent:IsTradeEnabled",
+      "@type": "xsd:boolean"
+    },
+    "DecimalPlaces": {
+      "@id": "independent:DecimalPlaces"
+    },
+    "Networks": {
+      "@id": "independent:Networks",
+      "@container": "@list"
+    },
+    "GetPublicGetrecenttradesResponse": "independent:GetPublicGetrecenttradesResponse",
+    "Trades": {
+      "@id": "independent:Trades",
+      "@container": "@list"
+    },
+    "GetPublicGettradehistorysummaryResponse": "independent:GetPublicGettradehistorysummaryResponse",
+    "HistorySummaryItems": {
+      "@id": "independent:HistorySummaryItems",
+      "@container": "@list"
+    },
+    "NumberOfHoursInThePastToRetrieve": {
+      "@id": "independent:NumberOfHoursInThePastToRetrieve",
+      "@type": "xsd:integer"
+    },
+    "GetPublicGetvalidlimitordertypesResponse": "independent:GetPublicGetvalidlimitordertypesResponse",
+    "limit_order_types": {
+      "@id": "independent:limit_order_types",
+      "@container": "@list"
+    },
+    "GetPublicGetvalidmarketordertypesResponse": "independent:GetPublicGetvalidmarketordertypesResponse",
+    "market_order_types": {
+      "@id": "independent:market_order_types",
+      "@container": "@list"
+    },
+    "GetPublicGetvalidordertypesResponse": "independent:GetPublicGetvalidordertypesResponse",
+    "order_types": {
+      "@id": "independent:order_types",
+      "@container": "@list"
+    },
+    "GetPublicGetvalidprimarycurrencycodesResponse": "independent:GetPublicGetvalidprimarycurrencycodesResponse",
+    "primary_currency_codes": {
+      "@id": "independent:primary_currency_codes",
+      "@container": "@list"
+    },
+    "GetPublicGetvalidsecondarycurrencycodesResponse": "independent:GetPublicGetvalidsecondarycurrencycodesResponse",
+    "secondary_currency_codes": {
+      "@id": "independent:secondary_currency_codes",
+      "@container": "@list"
+    },
+    "GetPublicGetvalidtransactiontypesResponse": "independent:GetPublicGetvalidtransactiontypesResponse",
+    "transaction_types": {
+      "@id": "independent:transaction_types",
+      "@container": "@list"
+    }
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Independent Reserve API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Independent Reserve's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-13) from openapi/_ae-authored/independent-reserve-openapi-generated.yml.",
+  "dcterms:created": "2026-10-13",
+  "dcterms:source": [
+    "openapi/_ae-authored/independent-reserve-openapi-generated.yml"
+  ]
+}

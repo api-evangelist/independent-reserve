@@ -1,0 +1,273 @@
+generated: '2026-10-13'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/independent-reserve-openapi-generated.yml
+vocabulary:
+  name: Independent Reserve Domain Vocabulary
+  description: 'Terms declared by Independent Reserve''s own API contract: its resource groups, objects and enumerations, with the contract''s
+    definitions. Derived, not authored.'
+  version: '2026-10-13'
+  terms:
+  - term: PostPrivateCancelorderRequest
+    definition: 'Object declared by the contract with fields: apiKey, nonce, signature.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateCancelorderRequest
+  - term: PostPrivateCancelordersRequest
+    definition: 'Object declared by the contract with fields: apiKey, nonce, signature.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateCancelordersRequest
+  - term: PostPrivateGetaccountsRequest
+    definition: 'Object declared by the contract with fields: apiKey, nonce, signature.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetaccountsRequest
+  - term: PostPrivateGetaccountsResponse
+    definition: 'Object declared by the contract with fields: AccountGuid, AccountStatus, AvailableBalance, CurrencyCode, TotalBalance.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetaccountsResponse
+  - term: PostPrivateGetbrokeragefeesRequest
+    definition: 'Object declared by the contract with fields: apiKey, nonce, signature.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetbrokeragefeesRequest
+  - term: PostPrivateGetbrokeragefeesResponse
+    definition: 'Object declared by the contract with fields: FeePercent.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetbrokeragefeesResponse
+  - term: PostPrivateGetclosedfilledordersRequest
+    definition: 'Object declared by the contract with fields: apiKey, nonce, signature, primaryCurrencyCode, secondaryCurrencyCode, pageIndex,
+      pageSize, fromTimestampUtc, includeTotals.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetclosedfilledordersRequest
+  - term: PostPrivateGetclosedfilledordersResponse
+    definition: 'Object declared by the contract with fields: PageSize, TotalItems, TotalPages, Data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetclosedfilledordersResponse
+  - term: PostPrivateGetclosedordersRequest
+    definition: 'Object declared by the contract with fields: apiKey, nonce, signature, primaryCurrencyCode, secondaryCurrencyCode, pageIndex,
+      pageSize, fromTimestampUtc, includeTotals.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetclosedordersRequest
+  - term: PostPrivateGetclosedordersResponse
+    definition: 'Object declared by the contract with fields: PageSize, TotalItems, TotalPages, Data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetclosedordersResponse
+  - term: PostPrivateGetdepositlimitsRequest
+    definition: 'Object declared by the contract with fields: apiKey, nonce, signature.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetdepositlimitsRequest
+  - term: PostPrivateGetdepositlimitsResponse
+    definition: 'Object declared by the contract with fields: DailyLimit, MonthlyLimit.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetdepositlimitsResponse
+  - term: PostPrivateGetfiatbankaccountsRequest
+    definition: 'Object declared by the contract with fields: apiKey, nonce, signature.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetfiatbankaccountsRequest
+  - term: PostPrivateGetfiatbankaccountsResponse
+    definition: 'Object declared by the contract with fields: PayId, Guid, Name, Bsb, Country, Currency, AccountNumber, AccountHolderName.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetfiatbankaccountsResponse
+  - term: PostPrivateGetopenordersRequest
+    definition: 'Object declared by the contract with fields: apiKey, nonce, signature, primaryCurrencyCode, secondaryCurrencyCode, pageIndex,
+      pageSize.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetopenordersRequest
+  - term: PostPrivateGetopenordersResponse
+    definition: 'Object declared by the contract with fields: PageSize, TotalItems, TotalPages, Data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetopenordersResponse
+  - term: PostPrivateGetorderdetailsRequest
+    definition: 'Object declared by the contract with fields: apiKey, nonce, signature, orderGuid, clientId.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetorderdetailsRequest
+  - term: PostPrivateGetorderdetailsResponse
+    definition: 'Object declared by the contract with fields: OrderGuid, CreatedTimestampUtc, Type, VolumeOrdered, VolumeFilled, Price, AvgPrice,
+      ReservedAmount, Status, PrimaryCurrencyCode, SecondaryCurrencyCode, ClientId.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetorderdetailsResponse
+  - term: PostPrivateGettradesRequest
+    definition: 'Object declared by the contract with fields: apiKey, nonce, signature.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGettradesRequest
+  - term: PostPrivateGettradesResponse
+    definition: 'Object declared by the contract with fields: TradeGuid, PrimaryCurrencyCode, SecondaryCurrencyCode.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGettradesResponse
+  - term: PostPrivateGettransactionsRequest
+    definition: 'Object declared by the contract with fields: apiKey, nonce, signature, accountGuid, fromTimestampUtc, toTimestampUtc, txTypes,
+      pageIndex, pageSize, includeTotals.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGettransactionsRequest
+  - term: PostPrivateGettransactionsResponse
+    definition: 'Object declared by the contract with fields: PageSize, TotalItems, TotalPages, Data.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGettransactionsResponse
+  - term: PostPrivateGetwithdrawallimitsRequest
+    definition: 'Object declared by the contract with fields: apiKey, nonce, signature.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetwithdrawallimitsRequest
+  - term: PostPrivateGetwithdrawallimitsResponse
+    definition: 'Object declared by the contract with fields: DailyLimit, MonthlyLimit.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetwithdrawallimitsResponse
+  - term: PostPrivatePlacelimitorderRequest
+    definition: 'Object declared by the contract with fields: apiKey, nonce, signature.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivatePlacelimitorderRequest
+  - term: PostPrivatePlacelimitorderResponse
+    definition: 'Object declared by the contract with fields: OrderGuid.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivatePlacelimitorderResponse
+  - term: PostPrivatePlacemarketorderRequest
+    definition: 'Object declared by the contract with fields: apiKey, nonce, signature.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivatePlacemarketorderRequest
+  - term: PostPrivatePlacemarketorderResponse
+    definition: 'Object declared by the contract with fields: OrderGuid.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivatePlacemarketorderResponse
+  - term: PostPrivateSynchdigitalcurrencydepositaddresswithblockchainR
+    definition: 'Object declared by the contract with fields: apiKey, nonce, signature.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateSynchdigitalcurrencydepositaddresswithblockchainR
+  - term: PostPrivateWithdrawcryptoRequest
+    definition: 'Object declared by the contract with fields: apiKey, nonce, signature.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateWithdrawcryptoRequest
+  - term: PostPrivateWithdrawfiatcurrencyRequest
+    definition: 'Object declared by the contract with fields: apiKey, nonce, signature.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateWithdrawfiatcurrencyRequest
+  - term: GetPublicGetallordersResponse
+    definition: 'Object declared by the contract with fields: BuyOrders, SellOrders, CreatedTimestampUtc, PrimaryCurrencyCode, SecondaryCurrencyCode.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/GetPublicGetallordersResponse
+  - term: GetPublicGetcryptowithdrawalfees2Response
+    definition: 'Object declared by the contract with fields: Fee, Network, Currency.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/GetPublicGetcryptowithdrawalfees2Response
+  - term: GetPublicGetdepositfeesResponse
+    definition: 'Object declared by the contract with fields: DepositType, FreeThreshold, Fee.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/GetPublicGetdepositfeesResponse
+  - term: GetPublicGetfiatwithdrawalfeesResponse
+    definition: 'Object declared by the contract with fields: WithdrawalType, MinimumAmount, CurrencyCode, Fee.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/GetPublicGetfiatwithdrawalfeesResponse
+  - term: GetPublicGetfxratesResponse
+    definition: 'Object declared by the contract with fields: CurrencyCodeA, CurrencyCodeB, Rate.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/GetPublicGetfxratesResponse
+  - term: GetPublicGetmarketsummaryResponse
+    definition: 'Object declared by the contract with fields: DayHighestPrice, DayLowestPrice, DayAvgPrice, DayVolumeXbt, DayVolumeXbtInSecondaryCurrrency,
+      CurrentLowestOfferPrice, CurrentHighestBidPrice, LastPrice, PrimaryCurrencyCode, SecondaryCurrencyCode, CreatedTimestampUtc.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/GetPublicGetmarketsummaryResponse
+  - term: GetPublicGetnetworksResponse
+    definition: 'Object declared by the contract with fields: networks.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/GetPublicGetnetworksResponse
+  - term: GetPublicGetorderbookResponse
+    definition: 'Object declared by the contract with fields: BuyOrders, SellOrders, CreatedTimestampUtc, PrimaryCurrencyCode, SecondaryCurrencyCode.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/GetPublicGetorderbookResponse
+  - term: GetPublicGetorderminimumvolumesResponse
+    definition: 'Object declared by the contract with fields: currency.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/GetPublicGetorderminimumvolumesResponse
+  - term: GetPublicGetprimarycurrencyconfig2Response
+    definition: 'Object declared by the contract with fields: Currency, Name, IsTradeEnabled, DecimalPlaces, Networks.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/GetPublicGetprimarycurrencyconfig2Response
+  - term: GetPublicGetrecenttradesResponse
+    definition: 'Object declared by the contract with fields: CreatedTimestampUtc, PrimaryCurrencyCode, SecondaryCurrencyCode, Trades.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/GetPublicGetrecenttradesResponse
+  - term: GetPublicGettradehistorysummaryResponse
+    definition: 'Object declared by the contract with fields: CreatedTimestampUtc, HistorySummaryItems, NumberOfHoursInThePastToRetrieve, PrimaryCurrencyCode,
+      SecondaryCurrencyCode.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/GetPublicGettradehistorysummaryResponse
+  - term: GetPublicGetvalidlimitordertypesResponse
+    definition: 'Object declared by the contract with fields: limit_order_types.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/GetPublicGetvalidlimitordertypesResponse
+  - term: GetPublicGetvalidmarketordertypesResponse
+    definition: 'Object declared by the contract with fields: market_order_types.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/GetPublicGetvalidmarketordertypesResponse
+  - term: GetPublicGetvalidordertypesResponse
+    definition: 'Object declared by the contract with fields: order_types.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/GetPublicGetvalidordertypesResponse
+  - term: GetPublicGetvalidprimarycurrencycodesResponse
+    definition: 'Object declared by the contract with fields: primary_currency_codes.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/GetPublicGetvalidprimarycurrencycodesResponse
+  - term: GetPublicGetvalidsecondarycurrencycodesResponse
+    definition: 'Object declared by the contract with fields: secondary_currency_codes.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/GetPublicGetvalidsecondarycurrencycodesResponse
+  - term: GetPublicGetvalidtransactiontypesResponse
+    definition: 'Object declared by the contract with fields: transaction_types.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/GetPublicGetvalidtransactiontypesResponse
+  - term: Private
+    definition: 'Resource group in the contract; its operation POST /Private/CancelOrder: Cancels a single order on the Independent Reserve exchange.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml
+  - term: Public
+    definition: 'Resource group in the contract; its operation GET /Public/GetAllOrders: Returns the Order Book for a given currency pair including
+      order identifiers.'
+    tags:
+    - Resource Group
+    source: openapi/_ae-authored/independent-reserve-openapi-generated.yml

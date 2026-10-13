@@ -1,0 +1,32 @@
+generated: '2026-10-13'
+method: searched
+source: https://www.independentreserve.com/features/api
+authentication: apiKey + nonce/expiry + HMAC-SHA256 signature in the JSON POST body (see authentication/)
+idempotency:
+  coverage: partial
+  mechanism: clientId request field; a repeat is rejected with ErrorCode RequestDuplicated
+  scope:
+  - PlaceLimitOrder
+  - PlaceMarketOrder
+  - WithdrawCrypto
+  - WithdrawFiatCurrency
+pagination:
+  style: page-index
+  params:
+  - pageIndex
+  - pageSize
+  response_fields:
+  - TotalItems
+  - TotalPages
+  - Data
+error_envelope:
+  shape:
+    ErrorCode: string
+    Message: string
+  statuses:
+  - 200
+  - 400
+  catalog: errors/independent-reserve-error-codes.yml
+versioning: method-name suffix (see lifecycle/)
+rate_limit_signaling: 'none documented; several Public and Private methods state they cache return values for 1 second (GetFxRates: 1 minute), so more frequent calls return cached data'
+request_format: Private methods take JSON POST with Content-Type application/json; gzip/deflate responses via Accept-Encoding

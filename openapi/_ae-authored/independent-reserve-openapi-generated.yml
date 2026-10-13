@@ -1,0 +1,1968 @@
+openapi: 3.1.0
+info:
+  title: Independent Reserve API
+  version: '2026-10-13'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-13: 36 operation(s) read from 1 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Independent Reserve has published no machine-readable contract
+    that the pipeline could find. Engine: anthropic.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 36
+    pages-with-code: 0
+    pages-read: 1
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-13'
+  x-generator: generate-contract-from-docs.py
+  x-engine: anthropic
+  x-sources:
+  - https://www.independentreserve.com/features/api
+servers:
+- url: https://api.independentreserve.com
+paths:
+  /Private/CancelOrder:
+    post:
+      operationId: post_Private_CancelOrder
+      tags:
+      - Private
+      summary: Cancels a single order on the Independent Reserve exchange.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: apiKey
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: nonce
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPrivateCancelorderRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /Private/CancelOrders:
+    post:
+      operationId: post_Private_CancelOrders
+      tags:
+      - Private
+      summary: Cancels multiple orders on the Independent Reserve exchange.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: apiKey
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: nonce
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPrivateCancelordersRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /Private/GetAccounts:
+    post:
+      operationId: post_Private_GetAccounts
+      tags:
+      - Private
+      summary: Retrieves information about your Independent Reserve accounts in crypto and fiat currencies.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: apiKey
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Your API Key
+      - name: nonce
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Nonce value
+      - name: signature
+        in: header
+        required: true
+        schema:
+          type: string
+        description: HMAC-SHA256 encoded message to authenticate API call
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPrivateGetaccountsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPrivateGetaccountsResponse'
+      x-evidence:
+        kind: documentation
+  /Private/GetBrokerageFees:
+    post:
+      operationId: post_Private_GetBrokerageFees
+      tags:
+      - Private
+      summary: Retrieves the brokerage fees.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: apiKey
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: nonce
+        in: query
+        required: true
+        schema:
+          type: integer
+      - name: signature
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPrivateGetbrokeragefeesRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPrivateGetbrokeragefeesResponse'
+      x-evidence:
+        kind: documentation
+  /Private/GetClosedFilledOrders:
+    post:
+      operationId: post_Private_GetClosedFilledOrders
+      tags:
+      - Private
+      summary: Retrieves a page of a specified size with your Closed orders which have had some or all of their outstanding volume filled.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: apiKey
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Your API Key
+      - name: nonce
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Nonce value
+      - name: signature
+        in: header
+        required: true
+        schema:
+          type: string
+        description: HMAC-SHA256 encoded message to authenticate API call
+      - name: primaryCurrencyCode
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The primary currency of orders
+      - name: secondaryCurrencyCode
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The secondary currency of orders
+      - name: pageIndex
+        in: query
+        required: true
+        schema:
+          type: integer
+        description: Must be larger than 0
+      - name: pageSize
+        in: query
+        required: true
+        schema:
+          type: integer
+        description: Must be between 1 and 5000
+      - name: fromTimestampUtc
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The timestamp in UTC, specified according to ISO 8601 standard, from which you want to retrieve orders
+      - name: includeTotals
+        in: query
+        required: false
+        schema:
+          type: boolean
+        description: Defaults to true for backward compatibility. When set to false, response time is improved.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPrivateGetclosedfilledordersRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPrivateGetclosedfilledordersResponse'
+      x-evidence:
+        kind: documentation
+  /Private/GetClosedOrders:
+    post:
+      operationId: post_Private_GetClosedOrders
+      tags:
+      - Private
+      summary: Retrieves a page of a specified size with your Closed and Cancelled orders.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: apiKey
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Your API Key
+      - name: nonce
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Nonce value
+      - name: signature
+        in: header
+        required: true
+        schema:
+          type: string
+        description: HMAC-SHA256 encoded message to authenticate API call
+      - name: primaryCurrencyCode
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The primary currency of orders
+      - name: secondaryCurrencyCode
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The secondary currency of orders
+      - name: pageIndex
+        in: query
+        required: true
+        schema:
+          type: integer
+        description: Must be larger than 0
+      - name: pageSize
+        in: query
+        required: true
+        schema:
+          type: integer
+        description: Must be between 1 and 5000
+      - name: fromTimestampUtc
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The timestamp in UTC, specified according to ISO 8601 standard, from which you want to retrieve orders
+      - name: includeTotals
+        in: query
+        required: false
+        schema:
+          type: boolean
+        description: Defaults to true for backward compatibility. When set to false, response time is improved.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPrivateGetclosedordersRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPrivateGetclosedordersResponse'
+      x-evidence:
+        kind: documentation
+  /Private/GetDepositLimits:
+    post:
+      operationId: post_Private_GetDepositLimits
+      tags:
+      - Private
+      summary: Retrieves deposit limits for the account.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: apiKey
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: nonce
+        in: query
+        required: true
+        schema:
+          type: integer
+      - name: signature
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPrivateGetdepositlimitsRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPrivateGetdepositlimitsResponse'
+      x-evidence:
+        kind: documentation
+  /Private/GetFiatBankAccounts:
+    post:
+      operationId: post_Private_GetFiatBankAccounts
+      tags:
+      - Private
+      summary: Retrieves the list of pre-configured external bank accounts.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: apiKey
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: nonce
+        in: query
+        required: true
+        schema:
+          type: integer
+      - name: signature
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPrivateGetfiatbankaccountsRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPrivateGetfiatbankaccountsResponse'
+      x-evidence:
+        kind: documentation
+  /Private/GetOpenOrders:
+    post:
+      operationId: post_Private_GetOpenOrders
+      tags:
+      - Private
+      summary: Retrieves a page of a specified size with your currently Open and Partially Filled orders.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: apiKey
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Your API Key
+      - name: nonce
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Nonce value
+      - name: signature
+        in: header
+        required: true
+        schema:
+          type: string
+        description: HMAC-SHA256 encoded message to authenticate API call
+      - name: primaryCurrencyCode
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The primary currency of orders
+      - name: secondaryCurrencyCode
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The secondary currency of orders
+      - name: pageIndex
+        in: query
+        required: true
+        schema:
+          type: integer
+        description: Must be larger than 0
+      - name: pageSize
+        in: query
+        required: true
+        schema:
+          type: integer
+        description: Must be between 1 and 100
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPrivateGetopenordersRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPrivateGetopenordersResponse'
+      x-evidence:
+        kind: documentation
+  /Private/GetOrderDetails:
+    post:
+      operationId: post_Private_GetOrderDetails
+      tags:
+      - Private
+      summary: Retrieves details about a single order.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: apiKey
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Your API Key
+      - name: nonce
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Nonce value
+      - name: signature
+        in: header
+        required: true
+        schema:
+          type: string
+        description: HMAC-SHA256 encoded message to authenticate API call
+      - name: orderGuid
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The guid of the order. Only one of orderGuid or clientId may be supplied at a time.
+      - name: clientId
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The clientId that was supplied when placing an order. Only one of orderGuid or clientId may be supplied at a time.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPrivateGetorderdetailsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPrivateGetorderdetailsResponse'
+      x-evidence:
+        kind: documentation
+  /Private/GetTrades:
+    post:
+      operationId: post_Private_GetTrades
+      tags:
+      - Private
+      summary: Retrieves trades for a given account.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: apiKey
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: nonce
+        in: query
+        required: true
+        schema:
+          type: integer
+      - name: signature
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPrivateGettradesRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPrivateGettradesResponse'
+      x-evidence:
+        kind: documentation
+  /Private/GetTransactions:
+    post:
+      operationId: post_Private_GetTransactions
+      tags:
+      - Private
+      summary: Retrieves a page of a specified size containing all transactions made on an account.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: apiKey
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Your API Key
+      - name: nonce
+        in: header
+        required: true
+        schema:
+          type: string
+        description: Nonce value
+      - name: signature
+        in: header
+        required: true
+        schema:
+          type: string
+        description: HMAC-SHA256 encoded message to authenticate API call
+      - name: accountGuid
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The Guid of your Independent Reserve account. You can retrieve information about your accounts via the GetAccounts method.
+      - name: fromTimestampUtc
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The timestamp in UTC, specified according to ISO 8601 standard, from which you want to retrieve transactions
+      - name: toTimestampUtc
+        in: query
+        required: false
+        schema:
+          type: string
+        description: The timestamp in UTC, specified according to ISO 8601 standard, until which you want to retrieve transactions
+      - name: txTypes
+        in: query
+        required: false
+        schema:
+          type: array
+        description: Array of transaction types for filtering
+      - name: pageIndex
+        in: query
+        required: true
+        schema:
+          type: integer
+        description: Must be larger than 0
+      - name: pageSize
+        in: query
+        required: true
+        schema:
+          type: integer
+        description: Must be between 1 and 5000
+      - name: includeTotals
+        in: query
+        required: false
+        schema:
+          type: boolean
+        description: Defaults to true for backward compatibility. When set to false, response time is improved.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPrivateGettransactionsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPrivateGettransactionsResponse'
+      x-evidence:
+        kind: documentation
+  /Private/GetWithdrawalLimits:
+    post:
+      operationId: post_Private_GetWithdrawalLimits
+      tags:
+      - Private
+      summary: Retrieves withdrawal limits for the account.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: apiKey
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: nonce
+        in: query
+        required: true
+        schema:
+          type: integer
+      - name: signature
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPrivateGetwithdrawallimitsRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPrivateGetwithdrawallimitsResponse'
+      x-evidence:
+        kind: documentation
+  /Private/PlaceLimitOrder:
+    post:
+      operationId: post_Private_PlaceLimitOrder
+      tags:
+      - Private
+      summary: Places a limit order.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: apiKey
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: nonce
+        in: query
+        required: true
+        schema:
+          type: integer
+      - name: signature
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPrivatePlacelimitorderRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPrivatePlacelimitorderResponse'
+      x-evidence:
+        kind: documentation
+  /Private/PlaceMarketOrder:
+    post:
+      operationId: post_Private_PlaceMarketOrder
+      tags:
+      - Private
+      summary: Places a market order.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: apiKey
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: nonce
+        in: query
+        required: true
+        schema:
+          type: integer
+      - name: signature
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPrivatePlacemarketorderRequest'
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostPrivatePlacemarketorderResponse'
+      x-evidence:
+        kind: documentation
+  /Private/SynchDigitalCurrencyDepositAddressWithBlockchain:
+    post:
+      operationId: post_Private_SynchDigitalCurrencyDepositAddressWithBlockchain
+      tags:
+      - Private
+      summary: Synchronises a digital currency deposit address with the blockchain.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: apiKey
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: nonce
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPrivateSynchdigitalcurrencydepositaddresswithblockchainR'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /Private/WithdrawCrypto:
+    post:
+      operationId: post_Private_WithdrawCrypto
+      tags:
+      - Private
+      summary: Withdraws cryptocurrency to a whitelisted address.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: apiKey
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: nonce
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPrivateWithdrawcryptoRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /Private/WithdrawFiatCurrency:
+    post:
+      operationId: post_Private_WithdrawFiatCurrency
+      tags:
+      - Private
+      summary: Withdraws fiat currency to a whitelisted bank account.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: apiKey
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: nonce
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: signature
+        in: query
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostPrivateWithdrawfiatcurrencyRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /Public/GetAllOrders:
+    get:
+      operationId: get_Public_GetAllOrders
+      tags:
+      - Public
+      summary: Returns the Order Book for a given currency pair including order identifiers.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: primaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The cryptocurrency for which to retrieve order book.
+      - name: secondaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The fiat currency in which to retrieve order book.
+      - name: maxDepthVolume
+        in: query
+        required: false
+        schema:
+          type: number
+        description: Limit the results to a maximum cumulated volume.
+      - name: maxDepthValue
+        in: query
+        required: false
+        schema:
+          type: number
+        description: Limit the results to a maximum value (price * volume).
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetallordersResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetCryptoWithdrawalFees2:
+    get:
+      operationId: get_Public_GetCryptoWithdrawalFees2
+      tags:
+      - Public
+      summary: Returns the fee schedule for crypto withdrawals.
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetcryptowithdrawalfees2Response'
+      x-evidence:
+        kind: documentation
+  /Public/GetDepositFees:
+    get:
+      operationId: get_Public_GetDepositFees
+      tags:
+      - Public
+      summary: Returns the fee schedule for fiat deposits.
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetdepositfeesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetFiatWithdrawalFees:
+    get:
+      operationId: get_Public_GetFiatWithdrawalFees
+      tags:
+      - Public
+      summary: Returns the fee schedule for all withdrawals.
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetfiatwithdrawalfeesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetFxRates:
+    get:
+      operationId: get_Public_GetFxRates
+      tags:
+      - Public
+      summary: Returns a list of exchange rates used by Independent Reserve when depositing funds or withdrawing funds from accounts.
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetfxratesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetMarketSummary:
+    get:
+      operationId: get_Public_GetMarketSummary
+      tags:
+      - Public
+      summary: Returns a current snapshot of the Independent Reserve market for a given currency pair.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: primaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The cryptocurrency for which to retrieve market summary.
+      - name: secondaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The fiat currency in which to retrieve market summary.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetmarketsummaryResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetNetworks:
+    get:
+      operationId: get_Public_GetNetworks
+      tags:
+      - Public
+      summary: Returns the set of blockchain networks in use.
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetnetworksResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetOrderBook:
+    get:
+      operationId: get_Public_GetOrderBook
+      tags:
+      - Public
+      summary: Returns the Order Book for a given currency pair.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: primaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The cryptocurrency for which to retrieve order book.
+      - name: secondaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The fiat currency in which to retrieve order book.
+      - name: maxDepthVolume
+        in: query
+        required: false
+        schema:
+          type: number
+        description: Limit the results to a maximum cumulated volume.
+      - name: maxDepthValue
+        in: query
+        required: false
+        schema:
+          type: number
+        description: Limit the results to a maximum value (price * volume).
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetorderbookResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetOrderMinimumVolumes:
+    get:
+      operationId: get_Public_GetOrderMinimumVolumes
+      tags:
+      - Public
+      summary: Returns a list of minimum allowed volumes for orders.
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetorderminimumvolumesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetPrimaryCurrencyConfig2:
+    get:
+      operationId: get_Public_GetPrimaryCurrencyConfig2
+      tags:
+      - Public
+      summary: Returns the configuration of all primary currencies.
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetprimarycurrencyconfig2Response'
+      x-evidence:
+        kind: documentation
+  /Public/GetRecentTrades:
+    get:
+      operationId: get_Public_GetRecentTrades
+      tags:
+      - Public
+      summary: Returns a list of most recently executed trades for a given currency pair.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: primaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The cryptocurrency for which to retrieve recent trades. Must be a valid primary currency, which can be checked via the GetValidPrimaryCurrencyCodes
+          method.
+      - name: secondaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The fiat currency in which to retrieve recent trades. Must be a valid secondary currency, which can be checked via the GetValidSecondaryCurrencyCodes
+          method.
+      - name: numberOfRecentTradesToRetrieve
+        in: query
+        required: true
+        schema:
+          type: integer
+        description: How many recent trades to retrieve (maximum is 50)
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetrecenttradesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetTradeHistorySummary:
+    get:
+      operationId: get_Public_GetTradeHistorySummary
+      tags:
+      - Public
+      summary: Returns summarised historical trading data for a given currency pair.
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: primaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The cryptocurrency for which to retrieve trade history.
+      - name: secondaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The fiat currency in which to retrieve trade history.
+      - name: numberOfHoursInThePastToRetrieve
+        in: query
+        required: true
+        schema:
+          type: integer
+        description: How many past hours of historical summary data to retrieve (maximum is 240).
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGettradehistorysummaryResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetValidLimitOrderTypes:
+    get:
+      operationId: get_Public_GetValidLimitOrderTypes
+      tags:
+      - Public
+      summary: Returns a list of valid limit order types which can be placed onto the Independent Reserve exchange platform.
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetvalidlimitordertypesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetValidMarketOrderTypes:
+    get:
+      operationId: get_Public_GetValidMarketOrderTypes
+      tags:
+      - Public
+      summary: Returns a list of valid market order types which can be placed onto the Independent Reserve exchange platform.
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetvalidmarketordertypesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetValidOrderTypes:
+    get:
+      operationId: get_Public_GetValidOrderTypes
+      tags:
+      - Public
+      summary: Returns a list of all valid order types which can be placed onto the Independent Reserve exchange platform.
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetvalidordertypesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetValidPrimaryCurrencyCodes:
+    get:
+      operationId: get_Public_GetValidPrimaryCurrencyCodes
+      tags:
+      - Public
+      summary: Returns a list of valid primary currency codes.
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetvalidprimarycurrencycodesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetValidSecondaryCurrencyCodes:
+    get:
+      operationId: get_Public_GetValidSecondaryCurrencyCodes
+      tags:
+      - Public
+      summary: Returns a list of valid secondary currency codes.
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetvalidsecondarycurrencycodesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetValidTransactionTypes:
+    get:
+      operationId: get_Public_GetValidTransactionTypes
+      tags:
+      - Public
+      summary: Returns a list of valid transaction types.
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetvalidtransactiontypesResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostPrivateCancelorderRequest:
+      type: object
+      properties:
+        apiKey:
+          type: string
+          description: Your API Key
+        nonce:
+          type: string
+          description: Nonce value
+        signature:
+          type: string
+          description: HMAC-SHA256 encoded message to authenticate API call
+      required:
+      - apiKey
+      - nonce
+      - signature
+    PostPrivateCancelordersRequest:
+      type: object
+      properties:
+        apiKey:
+          type: string
+          description: Your API Key
+        nonce:
+          type: string
+          description: Nonce value
+        signature:
+          type: string
+          description: HMAC-SHA256 encoded message to authenticate API call
+      required:
+      - apiKey
+      - nonce
+      - signature
+    PostPrivateGetaccountsRequest:
+      type: object
+      properties:
+        apiKey:
+          type: string
+          description: Your API Key
+        nonce:
+          type: string
+          description: Nonce value
+        signature:
+          type: string
+          description: HMAC-SHA256 encoded message to authenticate API call
+      required:
+      - apiKey
+      - nonce
+      - signature
+    PostPrivateGetaccountsResponse:
+      type: object
+      properties:
+        AccountGuid:
+          type: string
+          description: Unique identifier of account
+        AccountStatus:
+          type: string
+          description: Status of account
+        AvailableBalance:
+          type: number
+          description: Available balance in account to trade or withdraw
+        CurrencyCode:
+          type: string
+          description: Currency of account
+        TotalBalance:
+          type: number
+          description: Total balance in account
+    PostPrivateGetbrokeragefeesRequest:
+      type: object
+      properties:
+        apiKey:
+          type: string
+        nonce:
+          type: integer
+        signature:
+          type: string
+      required:
+      - apiKey
+      - nonce
+      - signature
+    PostPrivateGetbrokeragefeesResponse:
+      type: object
+      properties:
+        FeePercent:
+          type: number
+    PostPrivateGetclosedfilledordersRequest:
+      type: object
+      properties:
+        apiKey:
+          type: string
+          description: Your API Key
+        nonce:
+          type: string
+          description: Nonce value
+        signature:
+          type: string
+          description: HMAC-SHA256 encoded message to authenticate API call
+        primaryCurrencyCode:
+          type: string
+          description: The primary currency of orders
+        secondaryCurrencyCode:
+          type: string
+          description: The secondary currency of orders
+        pageIndex:
+          type: integer
+          description: Must be larger than 0
+        pageSize:
+          type: integer
+          description: Must be between 1 and 5000
+        fromTimestampUtc:
+          type: string
+          description: The timestamp in UTC, specified according to ISO 8601 standard, from which you want to retrieve orders
+        includeTotals:
+          type: boolean
+          description: Defaults to true for backward compatibility. When set to false, response time is improved.
+      required:
+      - apiKey
+      - nonce
+      - signature
+      - pageIndex
+      - pageSize
+    PostPrivateGetclosedfilledordersResponse:
+      type: object
+      properties:
+        PageSize:
+          type: integer
+          description: Number of orders shown per page
+        TotalItems:
+          type: integer
+          description: Total number of closed orders
+        TotalPages:
+          type: integer
+          description: Total number of pages
+        Data:
+          type: array
+          description: List of closed and partially filled orders
+    PostPrivateGetclosedordersRequest:
+      type: object
+      properties:
+        apiKey:
+          type: string
+          description: Your API Key
+        nonce:
+          type: string
+          description: Nonce value
+        signature:
+          type: string
+          description: HMAC-SHA256 encoded message to authenticate API call
+        primaryCurrencyCode:
+          type: string
+          description: The primary currency of orders
+        secondaryCurrencyCode:
+          type: string
+          description: The secondary currency of orders
+        pageIndex:
+          type: integer
+          description: Must be larger than 0
+        pageSize:
+          type: integer
+          description: Must be between 1 and 5000
+        fromTimestampUtc:
+          type: string
+          description: The timestamp in UTC, specified according to ISO 8601 standard, from which you want to retrieve orders
+        includeTotals:
+          type: boolean
+          description: Defaults to true for backward compatibility. When set to false, response time is improved.
+      required:
+      - apiKey
+      - nonce
+      - signature
+      - pageIndex
+      - pageSize
+    PostPrivateGetclosedordersResponse:
+      type: object
+      properties:
+        PageSize:
+          type: integer
+          description: Number of orders shown per page
+        TotalItems:
+          type: integer
+          description: Total number of closed orders
+        TotalPages:
+          type: integer
+          description: Total number of pages
+        Data:
+          type: array
+          description: List of closed and recently cancelled orders
+    PostPrivateGetdepositlimitsRequest:
+      type: object
+      properties:
+        apiKey:
+          type: string
+        nonce:
+          type: integer
+        signature:
+          type: string
+      required:
+      - apiKey
+      - nonce
+      - signature
+    PostPrivateGetdepositlimitsResponse:
+      type: object
+      properties:
+        DailyLimit:
+          type: number
+        MonthlyLimit:
+          type: number
+    PostPrivateGetfiatbankaccountsRequest:
+      type: object
+      properties:
+        apiKey:
+          type: string
+        nonce:
+          type: integer
+        signature:
+          type: string
+      required:
+      - apiKey
+      - nonce
+      - signature
+    PostPrivateGetfiatbankaccountsResponse:
+      type: object
+      properties:
+        PayId:
+          type: object
+        Guid:
+          type: string
+        Name:
+          type: string
+        Bsb:
+          type: string
+        Country:
+          type: string
+        Currency:
+          type: string
+        AccountNumber:
+          type: string
+        AccountHolderName:
+          type: string
+    PostPrivateGetopenordersRequest:
+      type: object
+      properties:
+        apiKey:
+          type: string
+          description: Your API Key
+        nonce:
+          type: string
+          description: Nonce value
+        signature:
+          type: string
+          description: HMAC-SHA256 encoded message to authenticate API call
+        primaryCurrencyCode:
+          type: string
+          description: The primary currency of orders
+        secondaryCurrencyCode:
+          type: string
+          description: The secondary currency of orders
+        pageIndex:
+          type: integer
+          description: Must be larger than 0
+        pageSize:
+          type: integer
+          description: Must be between 1 and 100
+      required:
+      - apiKey
+      - nonce
+      - signature
+      - pageIndex
+      - pageSize
+    PostPrivateGetopenordersResponse:
+      type: object
+      properties:
+        PageSize:
+          type: integer
+          description: Number of orders shown per page
+        TotalItems:
+          type: integer
+          description: Total number of open orders
+        TotalPages:
+          type: integer
+          description: Total number of pages
+        Data:
+          type: array
+          description: List of all open orders
+    PostPrivateGetorderdetailsRequest:
+      type: object
+      properties:
+        apiKey:
+          type: string
+          description: Your API Key
+        nonce:
+          type: string
+          description: Nonce value
+        signature:
+          type: string
+          description: HMAC-SHA256 encoded message to authenticate API call
+        orderGuid:
+          type: string
+          description: The guid of the order
+        clientId:
+          type: string
+          description: The clientId that was supplied when placing an order
+      required:
+      - apiKey
+      - nonce
+      - signature
+    PostPrivateGetorderdetailsResponse:
+      type: object
+      properties:
+        OrderGuid:
+          type: string
+          description: Unique identifier of the order
+        CreatedTimestampUtc:
+          type: string
+          description: UTC timestamp of when order was created
+        Type:
+          type: string
+          description: Type of order
+        VolumeOrdered:
+          type: number
+          description: The original volume ordered
+        VolumeFilled:
+          type: number
+          description: Volume already filled on this order
+        Price:
+          type: number
+          description: Order limit price in secondary currency
+        AvgPrice:
+          type: number
+          description: Average price for all trades executed for the order
+        ReservedAmount:
+          type: number
+          description: The amount of funds reserved in your account by this order
+        Status:
+          type: string
+          description: Order status
+        PrimaryCurrencyCode:
+          type: string
+          description: Primary currency of order
+        SecondaryCurrencyCode:
+          type: string
+          description: Secondary currency of order
+        ClientId:
+          type: string
+          description: Client ID supplied when placing the order
+    PostPrivateGettradesRequest:
+      type: object
+      properties:
+        apiKey:
+          type: string
+        nonce:
+          type: integer
+        signature:
+          type: string
+      required:
+      - apiKey
+      - nonce
+      - signature
+    PostPrivateGettradesResponse:
+      type: object
+      properties:
+        TradeGuid:
+          type: string
+        PrimaryCurrencyCode:
+          type: string
+        SecondaryCurrencyCode:
+          type: string
+    PostPrivateGettransactionsRequest:
+      type: object
+      properties:
+        apiKey:
+          type: string
+          description: Your API Key
+        nonce:
+          type: string
+          description: Nonce value
+        signature:
+          type: string
+          description: HMAC-SHA256 encoded message to authenticate API call
+        accountGuid:
+          type: string
+          description: The Guid of your Independent Reserve account
+        fromTimestampUtc:
+          type: string
+          description: The timestamp in UTC, specified according to ISO 8601 standard, from which you want to retrieve transactions
+        toTimestampUtc:
+          type: string
+          description: The timestamp in UTC, specified according to ISO 8601 standard, until which you want to retrieve transactions
+        txTypes:
+          type: array
+          description: Array of transaction types for filtering
+        pageIndex:
+          type: integer
+          description: Must be larger than 0
+        pageSize:
+          type: integer
+          description: Must be between 1 and 5000
+        includeTotals:
+          type: boolean
+          description: Defaults to true for backward compatibility. When set to false, response time is improved.
+      required:
+      - apiKey
+      - nonce
+      - signature
+      - accountGuid
+      - pageIndex
+      - pageSize
+    PostPrivateGettransactionsResponse:
+      type: object
+      properties:
+        PageSize:
+          type: integer
+          description: Number of transactions shown per page
+        TotalItems:
+          type: integer
+          description: Total number of transactions
+        TotalPages:
+          type: integer
+          description: Total number of pages
+        Data:
+          type: array
+          description: List of transactions
+    PostPrivateGetwithdrawallimitsRequest:
+      type: object
+      properties:
+        apiKey:
+          type: string
+        nonce:
+          type: integer
+        signature:
+          type: string
+      required:
+      - apiKey
+      - nonce
+      - signature
+    PostPrivateGetwithdrawallimitsResponse:
+      type: object
+      properties:
+        DailyLimit:
+          type: number
+        MonthlyLimit:
+          type: number
+    PostPrivatePlacelimitorderRequest:
+      type: object
+      properties:
+        apiKey:
+          type: string
+        nonce:
+          type: integer
+        signature:
+          type: string
+      required:
+      - apiKey
+      - nonce
+      - signature
+    PostPrivatePlacelimitorderResponse:
+      type: object
+      properties:
+        OrderGuid:
+          type: string
+    PostPrivatePlacemarketorderRequest:
+      type: object
+      properties:
+        apiKey:
+          type: string
+        nonce:
+          type: integer
+        signature:
+          type: string
+      required:
+      - apiKey
+      - nonce
+      - signature
+    PostPrivatePlacemarketorderResponse:
+      type: object
+      properties:
+        OrderGuid:
+          type: string
+    PostPrivateSynchdigitalcurrencydepositaddresswithblockchainR:
+      type: object
+      properties:
+        apiKey:
+          type: string
+          description: Your API Key
+        nonce:
+          type: string
+          description: Nonce value
+        signature:
+          type: string
+          description: HMAC-SHA256 encoded message to authenticate API call
+      required:
+      - apiKey
+      - nonce
+      - signature
+    PostPrivateWithdrawcryptoRequest:
+      type: object
+      properties:
+        apiKey:
+          type: string
+          description: Your API Key
+        nonce:
+          type: string
+          description: Nonce value
+        signature:
+          type: string
+          description: HMAC-SHA256 encoded message to authenticate API call
+      required:
+      - apiKey
+      - nonce
+      - signature
+    PostPrivateWithdrawfiatcurrencyRequest:
+      type: object
+      properties:
+        apiKey:
+          type: string
+          description: Your API Key
+        nonce:
+          type: string
+          description: Nonce value
+        signature:
+          type: string
+          description: HMAC-SHA256 encoded message to authenticate API call
+      required:
+      - apiKey
+      - nonce
+      - signature
+    GetPublicGetallordersResponse:
+      type: object
+      properties:
+        BuyOrders:
+          type: array
+        SellOrders:
+          type: array
+        CreatedTimestampUtc:
+          type: string
+        PrimaryCurrencyCode:
+          type: string
+        SecondaryCurrencyCode:
+          type: string
+    GetPublicGetcryptowithdrawalfees2Response:
+      type: object
+      properties:
+        Fee:
+          type: number
+          description: Withdrawal fee for the currency over the specified Network. Denominated in the Currency.
+        Network:
+          type: string
+          description: The blockchain network
+        Currency:
+          type: string
+          description: The currency code
+    GetPublicGetdepositfeesResponse:
+      type: object
+      properties:
+        DepositType:
+          type: string
+          description: The method of deposit
+        FreeThreshold:
+          type: number
+          description: An amount below this threshold will incur a deposit fee. When null, the fee is always applied.
+        Fee:
+          type: object
+          description: Deposit fee which will be deducted from deposit amount when under threshold
+    GetPublicGetfiatwithdrawalfeesResponse:
+      type: object
+      properties:
+        WithdrawalType:
+          type: string
+          description: The withdrawal method
+        MinimumAmount:
+          type: number
+          description: The minimum withdrawal amount
+        CurrencyCode:
+          type: string
+          description: The withdrawal currency
+        Fee:
+          type: object
+          description: Withdrawal fee which will be charged from your account
+    GetPublicGetfxratesResponse:
+      type: object
+      properties:
+        CurrencyCodeA:
+          type: string
+          description: Currency code A
+        CurrencyCodeB:
+          type: string
+          description: Currency code B
+        Rate:
+          type: number
+          description: The rate representing the amount of Currency Code B that can be bought with 1 unit of Currency Code A
+    GetPublicGetmarketsummaryResponse:
+      type: object
+      properties:
+        DayHighestPrice:
+          type: number
+        DayLowestPrice:
+          type: number
+        DayAvgPrice:
+          type: number
+        DayVolumeXbt:
+          type: number
+        DayVolumeXbtInSecondaryCurrrency:
+          type: number
+        CurrentLowestOfferPrice:
+          type: number
+        CurrentHighestBidPrice:
+          type: number
+        LastPrice:
+          type: number
+        PrimaryCurrencyCode:
+          type: string
+        SecondaryCurrencyCode:
+          type: string
+        CreatedTimestampUtc:
+          type: string
+    GetPublicGetnetworksResponse:
+      type: object
+      properties:
+        networks:
+          type: array
+    GetPublicGetorderbookResponse:
+      type: object
+      properties:
+        BuyOrders:
+          type: array
+        SellOrders:
+          type: array
+        CreatedTimestampUtc:
+          type: string
+        PrimaryCurrencyCode:
+          type: string
+        SecondaryCurrencyCode:
+          type: string
+    GetPublicGetorderminimumvolumesResponse:
+      type: object
+      properties:
+        currency:
+          type: string
+          description: Currency code and its minimum volume
+    GetPublicGetprimarycurrencyconfig2Response:
+      type: object
+      properties:
+        Currency:
+          type: string
+        Name:
+          type: string
+        IsTradeEnabled:
+          type: boolean
+        DecimalPlaces:
+          type: object
+        Networks:
+          type: array
+    GetPublicGetrecenttradesResponse:
+      type: object
+      properties:
+        CreatedTimestampUtc:
+          type: string
+          description: UTC timestamp of when the data was generated
+        PrimaryCurrencyCode:
+          type: string
+          description: The primary currency being shown
+        SecondaryCurrencyCode:
+          type: string
+          description: The secondary currency being used for pricing
+        Trades:
+          type: array
+          description: List of individual trades
+    GetPublicGettradehistorysummaryResponse:
+      type: object
+      properties:
+        CreatedTimestampUtc:
+          type: string
+        HistorySummaryItems:
+          type: array
+        NumberOfHoursInThePastToRetrieve:
+          type: integer
+        PrimaryCurrencyCode:
+          type: string
+        SecondaryCurrencyCode:
+          type: string
+    GetPublicGetvalidlimitordertypesResponse:
+      type: object
+      properties:
+        limit_order_types:
+          type: array
+    GetPublicGetvalidmarketordertypesResponse:
+      type: object
+      properties:
+        market_order_types:
+          type: array
+    GetPublicGetvalidordertypesResponse:
+      type: object
+      properties:
+        order_types:
+          type: array
+    GetPublicGetvalidprimarycurrencycodesResponse:
+      type: object
+      properties:
+        primary_currency_codes:
+          type: array
+    GetPublicGetvalidsecondarycurrencycodesResponse:
+      type: object
+      properties:
+        secondary_currency_codes:
+          type: array
+    GetPublicGetvalidtransactiontypesResponse:
+      type: object
+      properties:
+        transaction_types:
+          type: array
+  securitySchemes:
+    IR_API_key_HMAC-SHA256_signature:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-source: https://www.independentreserve.com/features/api#authentication-api-key
+tags:
+- name: Private
+- name: Public
+security:
+- IR_API_key_HMAC-SHA256_signature: []

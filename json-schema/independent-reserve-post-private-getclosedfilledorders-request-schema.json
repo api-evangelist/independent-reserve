@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/independent-reserve/main/json-schema/independent-reserve-post-private-getclosedfilledorders-request-schema.json",
+  "title": "PostPrivateGetclosedfilledordersRequest",
+  "x-generated": "2026-10-13",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/independent-reserve-openapi-generated.yml#/components/schemas/PostPrivateGetclosedfilledordersRequest",
+  "type": "object",
+  "properties": {
+    "apiKey": {
+      "type": "string",
+      "description": "Your API Key"
+    },
+    "nonce": {
+      "type": "string",
+      "description": "Nonce value"
+    },
+    "signature": {
+      "type": "string",
+      "description": "HMAC-SHA256 encoded message to authenticate API call"
+    },
+    "primaryCurrencyCode": {
+      "type": "string",
+      "description": "The primary currency of orders"
+    },
+    "secondaryCurrencyCode": {
+      "type": "string",
+      "description": "The secondary currency of orders"
+    },
+    "pageIndex": {
+      "type": "integer",
+      "description": "Must be larger than 0"
+    },
+    "pageSize": {
+      "type": "integer",
+      "description": "Must be between 1 and 5000"
+    },
+    "fromTimestampUtc": {
+      "type": "string",
+      "description": "The timestamp in UTC, specified according to ISO 8601 standard, from which you want to retrieve orders"
+    },
+    "includeTotals": {
+      "type": "boolean",
+      "description": "Defaults to true for backward compatibility. When set to false, response time is improved."
+    }
+  },
+  "required": [
+    "apiKey",
+    "nonce",
+    "signature",
+    "pageIndex",
+    "pageSize"
+  ]
+}
