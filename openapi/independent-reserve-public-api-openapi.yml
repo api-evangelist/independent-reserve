@@ -1,0 +1,606 @@
+openapi: 3.2.0
+info:
+  title: Independent Reserve Public API
+  version: '2026-10-13'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-10-13: 36 operation(s) read from 1 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Independent Reserve has published no machine-readable contract that the pipeline could find. Engine: anthropic.'
+  x-evidence-tiers:
+    code-example: 0
+    documentation: 36
+    pages-with-code: 0
+    pages-read: 1
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-10-13'
+  x-generator: generate-contract-from-docs.py
+  x-engine: anthropic
+  x-sources:
+  - https://www.independentreserve.com/features/api
+servers:
+- url: https://api.independentreserve.com
+security:
+- IR_API_key_HMAC-SHA256_signature: []
+tags:
+- name: Public
+paths:
+  /Public/GetAllOrders:
+    get:
+      operationId: get_Public_GetAllOrders
+      tags:
+      - Public
+      summary: Returns the Order Book for a given currency pair including order identifiers
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: primaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The cryptocurrency for which to retrieve order book.
+      - name: secondaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The fiat currency in which to retrieve order book.
+      - name: maxDepthVolume
+        in: query
+        required: false
+        schema:
+          type: number
+        description: Limit the results to a maximum cumulated volume.
+      - name: maxDepthValue
+        in: query
+        required: false
+        schema:
+          type: number
+        description: Limit the results to a maximum value (price * volume).
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetallordersResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetCryptoWithdrawalFees2:
+    get:
+      operationId: get_Public_GetCryptoWithdrawalFees2
+      tags:
+      - Public
+      summary: Returns the fee schedule for crypto withdrawals
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetcryptowithdrawalfees2Response'
+      x-evidence:
+        kind: documentation
+  /Public/GetDepositFees:
+    get:
+      operationId: get_Public_GetDepositFees
+      tags:
+      - Public
+      summary: Returns the fee schedule for fiat deposits
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetdepositfeesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetFiatWithdrawalFees:
+    get:
+      operationId: get_Public_GetFiatWithdrawalFees
+      tags:
+      - Public
+      summary: Returns the fee schedule for all withdrawals
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetfiatwithdrawalfeesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetFxRates:
+    get:
+      operationId: get_Public_GetFxRates
+      tags:
+      - Public
+      summary: Returns a list of exchange rates used by Independent Reserve when depositing…
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetfxratesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetMarketSummary:
+    get:
+      operationId: get_Public_GetMarketSummary
+      tags:
+      - Public
+      summary: Returns a current snapshot of the Independent Reserve market for a given…
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: primaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The cryptocurrency for which to retrieve market summary.
+      - name: secondaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The fiat currency in which to retrieve market summary.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetmarketsummaryResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetNetworks:
+    get:
+      operationId: get_Public_GetNetworks
+      tags:
+      - Public
+      summary: Returns the set of blockchain networks in use
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetnetworksResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetOrderBook:
+    get:
+      operationId: get_Public_GetOrderBook
+      tags:
+      - Public
+      summary: Returns the Order Book for a given currency pair
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: primaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The cryptocurrency for which to retrieve order book.
+      - name: secondaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The fiat currency in which to retrieve order book.
+      - name: maxDepthVolume
+        in: query
+        required: false
+        schema:
+          type: number
+        description: Limit the results to a maximum cumulated volume.
+      - name: maxDepthValue
+        in: query
+        required: false
+        schema:
+          type: number
+        description: Limit the results to a maximum value (price * volume).
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetorderbookResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetOrderMinimumVolumes:
+    get:
+      operationId: get_Public_GetOrderMinimumVolumes
+      tags:
+      - Public
+      summary: Returns a list of minimum allowed volumes for orders
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetorderminimumvolumesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetPrimaryCurrencyConfig2:
+    get:
+      operationId: get_Public_GetPrimaryCurrencyConfig2
+      tags:
+      - Public
+      summary: Returns the configuration of all primary currencies
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetprimarycurrencyconfig2Response'
+      x-evidence:
+        kind: documentation
+  /Public/GetRecentTrades:
+    get:
+      operationId: get_Public_GetRecentTrades
+      tags:
+      - Public
+      summary: Returns a list of most recently executed trades for a given currency pair
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: primaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The cryptocurrency for which to retrieve recent trades. Must be a valid primary currency, which can be checked via the GetValidPrimaryCurrencyCodes method.
+      - name: secondaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The fiat currency in which to retrieve recent trades. Must be a valid secondary currency, which can be checked via the GetValidSecondaryCurrencyCodes method.
+      - name: numberOfRecentTradesToRetrieve
+        in: query
+        required: true
+        schema:
+          type: integer
+        description: How many recent trades to retrieve (maximum is 50)
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetrecenttradesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetTradeHistorySummary:
+    get:
+      operationId: get_Public_GetTradeHistorySummary
+      tags:
+      - Public
+      summary: Returns summarised historical trading data for a given currency pair
+      x-source: https://www.independentreserve.com/features/api
+      parameters:
+      - name: primaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The cryptocurrency for which to retrieve trade history.
+      - name: secondaryCurrencyCode
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The fiat currency in which to retrieve trade history.
+      - name: numberOfHoursInThePastToRetrieve
+        in: query
+        required: true
+        schema:
+          type: integer
+        description: How many past hours of historical summary data to retrieve (maximum is 240).
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGettradehistorysummaryResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetValidLimitOrderTypes:
+    get:
+      operationId: get_Public_GetValidLimitOrderTypes
+      tags:
+      - Public
+      summary: Returns a list of valid limit order types which can be placed onto the…
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetvalidlimitordertypesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetValidMarketOrderTypes:
+    get:
+      operationId: get_Public_GetValidMarketOrderTypes
+      tags:
+      - Public
+      summary: Returns a list of valid market order types which can be placed onto the…
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetvalidmarketordertypesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetValidOrderTypes:
+    get:
+      operationId: get_Public_GetValidOrderTypes
+      tags:
+      - Public
+      summary: Returns a list of all valid order types which can be placed onto the…
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetvalidordertypesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetValidPrimaryCurrencyCodes:
+    get:
+      operationId: get_Public_GetValidPrimaryCurrencyCodes
+      tags:
+      - Public
+      summary: Returns a list of valid primary currency codes
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetvalidprimarycurrencycodesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetValidSecondaryCurrencyCodes:
+    get:
+      operationId: get_Public_GetValidSecondaryCurrencyCodes
+      tags:
+      - Public
+      summary: Returns a list of valid secondary currency codes
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetvalidsecondarycurrencycodesResponse'
+      x-evidence:
+        kind: documentation
+  /Public/GetValidTransactionTypes:
+    get:
+      operationId: get_Public_GetValidTransactionTypes
+      tags:
+      - Public
+      summary: Returns a list of valid transaction types
+      x-source: https://www.independentreserve.com/features/api
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetPublicGetvalidtransactiontypesResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    GetPublicGetvalidsecondarycurrencycodesResponse:
+      type: object
+      properties:
+        secondary_currency_codes:
+          type: array
+    GetPublicGetvalidlimitordertypesResponse:
+      type: object
+      properties:
+        limit_order_types:
+          type: array
+    GetPublicGetvalidprimarycurrencycodesResponse:
+      type: object
+      properties:
+        primary_currency_codes:
+          type: array
+    GetPublicGetvalidmarketordertypesResponse:
+      type: object
+      properties:
+        market_order_types:
+          type: array
+    GetPublicGetcryptowithdrawalfees2Response:
+      type: object
+      properties:
+        Fee:
+          type: number
+          description: Withdrawal fee for the currency over the specified Network. Denominated in the Currency.
+        Network:
+          type: string
+          description: The blockchain network
+        Currency:
+          type: string
+          description: The currency code
+    GetPublicGetmarketsummaryResponse:
+      type: object
+      properties:
+        DayHighestPrice:
+          type: number
+        DayLowestPrice:
+          type: number
+        DayAvgPrice:
+          type: number
+        DayVolumeXbt:
+          type: number
+        DayVolumeXbtInSecondaryCurrrency:
+          type: number
+        CurrentLowestOfferPrice:
+          type: number
+        CurrentHighestBidPrice:
+          type: number
+        LastPrice:
+          type: number
+        PrimaryCurrencyCode:
+          type: string
+        SecondaryCurrencyCode:
+          type: string
+        CreatedTimestampUtc:
+          type: string
+    GetPublicGetfiatwithdrawalfeesResponse:
+      type: object
+      properties:
+        WithdrawalType:
+          type: string
+          description: The withdrawal method
+        MinimumAmount:
+          type: number
+          description: The minimum withdrawal amount
+        CurrencyCode:
+          type: string
+          description: The withdrawal currency
+        Fee:
+          type: object
+          description: Withdrawal fee which will be charged from your account
+    GetPublicGetnetworksResponse:
+      type: object
+      properties:
+        networks:
+          type: array
+    GetPublicGetrecenttradesResponse:
+      type: object
+      properties:
+        CreatedTimestampUtc:
+          type: string
+          description: UTC timestamp of when the data was generated
+        PrimaryCurrencyCode:
+          type: string
+          description: The primary currency being shown
+        SecondaryCurrencyCode:
+          type: string
+          description: The secondary currency being used for pricing
+        Trades:
+          type: array
+          description: List of individual trades
+    GetPublicGetorderbookResponse:
+      type: object
+      properties:
+        BuyOrders:
+          type: array
+        SellOrders:
+          type: array
+        CreatedTimestampUtc:
+          type: string
+        PrimaryCurrencyCode:
+          type: string
+        SecondaryCurrencyCode:
+          type: string
+    GetPublicGetprimarycurrencyconfig2Response:
+      type: object
+      properties:
+        Currency:
+          type: string
+        Name:
+          type: string
+        IsTradeEnabled:
+          type: boolean
+        DecimalPlaces:
+          type: object
+        Networks:
+          type: array
+    GetPublicGetvalidtransactiontypesResponse:
+      type: object
+      properties:
+        transaction_types:
+          type: array
+    GetPublicGettradehistorysummaryResponse:
+      type: object
+      properties:
+        CreatedTimestampUtc:
+          type: string
+        HistorySummaryItems:
+          type: array
+        NumberOfHoursInThePastToRetrieve:
+          type: integer
+        PrimaryCurrencyCode:
+          type: string
+        SecondaryCurrencyCode:
+          type: string
+    GetPublicGetallordersResponse:
+      type: object
+      properties:
+        BuyOrders:
+          type: array
+        SellOrders:
+          type: array
+        CreatedTimestampUtc:
+          type: string
+        PrimaryCurrencyCode:
+          type: string
+        SecondaryCurrencyCode:
+          type: string
+    GetPublicGetdepositfeesResponse:
+      type: object
+      properties:
+        DepositType:
+          type: string
+          description: The method of deposit
+        FreeThreshold:
+          type: number
+          description: An amount below this threshold will incur a deposit fee. When null, the fee is always applied.
+        Fee:
+          type: object
+          description: Deposit fee which will be deducted from deposit amount when under threshold
+    GetPublicGetfxratesResponse:
+      type: object
+      properties:
+        CurrencyCodeA:
+          type: string
+          description: Currency code A
+        CurrencyCodeB:
+          type: string
+          description: Currency code B
+        Rate:
+          type: number
+          description: The rate representing the amount of Currency Code B that can be bought with 1 unit of Currency Code A
+    GetPublicGetorderminimumvolumesResponse:
+      type: object
+      properties:
+        currency:
+          type: string
+          description: Currency code and its minimum volume
+    GetPublicGetvalidordertypesResponse:
+      type: object
+      properties:
+        order_types:
+          type: array
+  securitySchemes:
+    IR_API_key_HMAC-SHA256_signature:
+      type: apiKey
+      in: header
+      name: Authorization
+      x-source: https://www.independentreserve.com/features/api#authentication-api-key

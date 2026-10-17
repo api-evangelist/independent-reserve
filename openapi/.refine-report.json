@@ -1,0 +1,19 @@
+{
+  "provider": "independent-reserve",
+  "sources": [
+    "_ae-authored/independent-reserve-openapi-generated.yml"
+  ],
+  "outputs": [
+    "independent-reserve-private-api-openapi.yml",
+    "independent-reserve-public-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (0 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "independent-reserve-openapi-generated.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: written (+2 apis, 3 total)"
+  ],
+  "skipped": []
+}

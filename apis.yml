@@ -79,19 +79,29 @@ common:
 - type: Login
   url: https://portal.independentreserve.com/
 apis:
-- aid: independent-reserve:independent-reserve-api
-  name: Independent Reserve API
-  description: JSON HTTP API with Public market-data methods (GET) and Private account, order, deposit and withdrawal methods (POST, signed with API key, nonce or expiry, and HMAC-SHA256 signature), plus request-for-quote endpoints.
+- aid: independent-reserve:independent-reserve-websockets
+  name: Independent Reserve WebSockets API
+  description: >-
+    WebSockets feed for order book and ticker data, documented with samples in the independentreserve/websockets
+    GitHub repository.
+  humanURL: https://github.com/independentreserve/websockets
+  tags:
+  - Cryptocurrency
+  - WebSockets
+  - Market Data
+  properties:
+  - type: Documentation
+    url: https://github.com/independentreserve/websockets
+- aid: independent-reserve:independent-reserve-private-api
+  name: Independent Reserve Private API
+  description: The Private API from Independent Reserve — 18 operation(s) for private.
   humanURL: https://www.independentreserve.com/features/api
   baseURL: https://api.independentreserve.com
   tags:
-  - Cryptocurrency
-  - Trading
-  - Market Data
+  - Private
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/independent-reserve-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/independent-reserve-private-api-openapi.yml
   - type: JSONSchema
     url: json-schema/independent-reserve-post-private-gettransactions-request-schema.json
   - type: JSONSchema
@@ -112,17 +122,36 @@ apis:
     url: postman/independent-reserve-api-postman-collection.json
   - type: SourceCode
     url: https://github.com/independentreserve/dotNetApiClient
-- aid: independent-reserve:independent-reserve-websockets
-  name: Independent Reserve WebSockets API
-  description: WebSockets feed for order book and ticker data, documented with samples in the independentreserve/websockets GitHub repository.
-  humanURL: https://github.com/independentreserve/websockets
+- aid: independent-reserve:independent-reserve-public-api
+  name: Independent Reserve Public API
+  description: The Public API from Independent Reserve — 18 operation(s) for public.
+  humanURL: https://www.independentreserve.com/features/api
+  baseURL: https://api.independentreserve.com
   tags:
-  - Cryptocurrency
-  - WebSockets
-  - Market Data
+  - Public
   properties:
+  - type: OpenAPI
+    url: openapi/independent-reserve-public-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/independent-reserve-post-private-gettransactions-request-schema.json
+  - type: JSONSchema
+    url: json-schema/independent-reserve-post-private-getorderdetails-response-schema.json
+  - type: JSONSchema
+    url: json-schema/independent-reserve-post-private-getclosedfilledorders-request-schema.json
+  - type: JSONSchema
+    url: json-schema/independent-reserve-post-private-getclosedorders-request-schema.json
+  - type: JSONSchema
+    url: json-schema/independent-reserve-post-private-getopenorders-request-schema.json
+  - type: JSONSchema
+    url: json-schema/independent-reserve-get-public-getmarketsummary-response-schema.json
   - type: Documentation
-    url: https://github.com/independentreserve/websockets
+    url: https://www.independentreserve.com/features/api
+  - type: Authentication
+    url: https://www.independentreserve.com/features/api#authentication-api-key
+  - type: PostmanCollection
+    url: postman/independent-reserve-api-postman-collection.json
+  - type: SourceCode
+    url: https://github.com/independentreserve/dotNetApiClient
 x-coverage:
   state: none
   reason: no-developer-program
