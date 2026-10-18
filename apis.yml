@@ -87,6 +87,10 @@ apis:
   humanURL: https://github.com/independentreserve/websockets
   tags:
   - Cryptocurrency
+  - WebSocket
+  - Market Data
+  tags_raw:
+  - Cryptocurrency
   - WebSockets
   - Market Data
   properties:
