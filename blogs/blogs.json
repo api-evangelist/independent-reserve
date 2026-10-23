@@ -1,0 +1,14 @@
+{
+  "repo": "independent-reserve",
+  "feeds": [
+    {
+      "source": "https://www.independentreserve.com/blog",
+      "feed_url": "https://www.independentreserve.com/blog/feed",
+      "title": "",
+      "saved": 1,
+      "method": "discovered"
+    }
+  ],
+  "post_count": 1,
+  "fetched": "2026-10-17T14:53:57Z"
+}
