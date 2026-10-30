@@ -64,5 +64,126 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Independent Reserve is a company surfaced via the API Evangelist harvest backlog (source: market-gap:crypto-exchanges) and added to the network as a stub for full-pipeline profiling.
-- https://www.independentreserve.com
+Independent Reserve is an Australian cryptocurrency exchange (also serving New Zealand and Singapore) for personal, business, trust and institutional clients. It publishes a JSON-over-HTTPS trading API at https://api.independentreserve.com with Public (unauthenticated GET) and Private (HMAC-SHA256 signed POST) methods for market data, orders, accounts, deposits and withdrawals, a request-for-quote (RFQ) surface, and a WebSockets market-data feed.
+
+**Areas:** Company · Cryptocurrency · Exchange · Trading · Bitcoin · Financial Services
+
+## Independent Reserve on APIs.io
+
+Everything profiled for Independent Reserve is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/independent-reserve/](https://apis.io/providers/independent-reserve/)** — or go straight to one of the APIs or properties below.
+
+### APIs (3)
+
+- [Independent Reserve WebSockets API](https://apis.io/apis/independent-reserve/independent-reserve-websockets/) — WebSockets feed for order book and ticker data, documented with samples in the independentreserve/websockets GitHub repository.
+- [Independent Reserve Private API](https://apis.io/apis/independent-reserve/independent-reserve-private-api/) — The Private API from Independent Reserve — 18 operation(s) for private.
+- [Independent Reserve Public API](https://apis.io/apis/independent-reserve/independent-reserve-public-api/) — The Public API from Independent Reserve — 18 operation(s) for public.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [independent-reserve-mcp.yml](https://apis.io/servers/independent-reserve/independent-reserve-mcp-yml/)
+
+#### JSON Schema (6)
+
+The data models the API reads and writes.
+
+- [GetPublicGetmarketsummaryResponse](https://apis.io/schemas/independent-reserve/independent-reserve-get-public-getmarketsummary-response/)
+- [PostPrivateGetclosedfilledordersRequest](https://apis.io/schemas/independent-reserve/independent-reserve-post-private-getclosedfilledorders-request/)
+- [PostPrivateGetclosedordersRequest](https://apis.io/schemas/independent-reserve/independent-reserve-post-private-getclosedorders-request/)
+- [PostPrivateGetopenordersRequest](https://apis.io/schemas/independent-reserve/independent-reserve-post-private-getopenorders-request/)
+- [PostPrivateGetorderdetailsResponse](https://apis.io/schemas/independent-reserve/independent-reserve-post-private-getorderdetails-response/)
+- [PostPrivateGettransactionsRequest](https://apis.io/schemas/independent-reserve/independent-reserve-post-private-gettransactions-request/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Independent Reserve Context](https://apis.io/jsonld/independent-reserve/independent-reserve-context/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Independent Reserve API Rules](https://apis.io/rules/independent-reserve/independent-reserve-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Independent Reserve Authentication](https://apis.io/security/independent-reserve/independent-reserve-authentication/)
+- [Independent Reserve Domain Security](https://apis.io/security/independent-reserve/independent-reserve-domain-security/)
+- [Independent Reserve Vulnerability Disclosure](https://apis.io/security/independent-reserve/independent-reserve-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.independentreserve.com)
+- [Documentation](https://www.independentreserve.com/features/api)
+- [Getting started](https://www.independentreserve.com/help/getting-started)
+- [API reference](https://www.independentreserve.com/features/api)
+- [Support](https://www.independentreserve.com/help)
+- [Blog](https://www.independentreserve.com/blog)
+- [Security](https://www.independentreserve.com/security)
+- [Trust centre](https://www.independentreserve.com/features/trust)
+- [Terms of service](https://www.independentreserve.com/help/terms-and-conditions)
+- [Privacy policy](https://www.independentreserve.com/help/privacy-policy)
+- [GitHub](https://github.com/independentreserve)
+
+## API Evangelist rating
+
+**Kin Score 38.1** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 58.9 |
+| Contract quality | 26.0 |
+| Contract governance | 22.0 |
+| Operational transparency | 23.7 |
+| Developer ergonomics | 51.9 |
+| Access clarity | 42.1 |
+
+**Agent readiness 23.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | documented (partial credit) |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 33.3** — Securities & Market Data
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/independent-reserve/](https://apis.io/providers/independent-reserve/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Independent Reserve: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/independent-reserve/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
